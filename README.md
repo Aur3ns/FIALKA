@@ -1,4 +1,4 @@
-# Fialka: Simulateur de Machine de Chiffrement
+html <div> center# Fialka M-125 | ФИАЛКА M-125
 
 ![Machine Fialka](https://www.cryptomuseum.com/crypto/fialka/m125/img/302790/003/full.jpg)
 *Machine Fialka (M-125) utilisée pour le chiffrement des communications pendant la guerre froide.*
