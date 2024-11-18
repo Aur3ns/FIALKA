@@ -3,8 +3,8 @@
 2 15 0 1  # Rotor 2, position 15, face 0, fixe
 3 20 1 0  # Rotor 3, position 20, face 1, mobile
 4 25 0 0  # Rotor 4, position 25, face 0, mobile
-5 30 1 1  # Rotor 5, position 30, face 1, fixe
-6 35 0 0  # Rotor 6, position 35, face 0, mobile
-7 40 1 0  # Rotor 7, position 40, face 1, mobile
-8 45 0 0  # Rotor 8, position 45, face 0, mobile
-9 50 1 0  # Rotor 9, position 50, face 1, mobile
+5 0  1 1  # Rotor 5, position 30 % 30 = 0, face 1, fixe
+6 5  0 0  # Rotor 6, position 35 % 30 = 5, face 0, mobile
+7 10 1 0  # Rotor 7, position 40 % 30 = 10, face 1, mobile
+8 15 0 0  # Rotor 8, position 45 % 30 = 15, face 0, mobile
+9 20 1 0  # Rotor 9, position 50 % 30 = 20, face 1, mobile

@@ -7,6 +7,8 @@
 typedef unsigned char byte;
 typedef uint64_t pint;
 
+FILE *logFile = NULL;
+
 #define ROT 10          // Nombre de rotors
 #define MOD 30          // Alphabet de 30 caractères (Fialka)
 #define MAX_TAPE 1024   // Longueur maximale de la bande perforée
@@ -23,6 +25,7 @@ void decodeFrom5Bit(const byte *input, size_t length, byte *output, size_t *outp
 void validateReflectors();
 void validatePlugboard();
 void validateRotors();
+void validateRotorInversion();
 void generatePermutation(byte *perm, byte *invPerm, int size);
 
 
@@ -131,6 +134,7 @@ void initializeDefaults() {
     validateReflectors();
     validatePlugboard();
     validateRotors();
+    validateRotorInversion();
 }
 
 void validateRotors() {
@@ -154,18 +158,42 @@ void validateRotors() {
     }
 }
 
-void validatePlugboard() {
-    for (int i = 0; i < MOD; i++) {
-        if (PLUGBOARD[i] < 0 || PLUGBOARD[i] >= MOD) {
-            fprintf(stderr, "Erreur : Plugboard a une sortie invalide pour %d -> %d.\n", i, PLUGBOARD[i]);
-            exit(EXIT_FAILURE);
-        }
-        if (PLUGBOARD[PLUGBOARD[i]] != i) {
-            fprintf(stderr, "Erreur : Plugboard non symétrique pour %d -> %d.\n", i, PLUGBOARD[i]);
-            exit(EXIT_FAILURE);
+void validateRotorInversion() {
+    for (int r = 0; r < ROT; r++) {
+        for (int core = 0; core < 2; core++) {
+            for (int i = 0; i < MOD; i++) {
+                int forward = ROTOR[r][core][i];
+                int inverse = ROTOR_INV[r][core][forward];
+                if (inverse != i) {
+                    fprintf(stderr, "Erreur : Inversion incorrecte dans le rotor %d core %d pour %d -> %d -> %d.\n",
+                            r, core, i, forward, inverse);
+                    exit(EXIT_FAILURE);
+                }
+            }
         }
     }
 }
+
+
+void validatePlugboard() {
+    int counts[MOD] = {0};
+    for (int i = 0; i < MOD; i++) {
+        if (PLUGBOARD[i] < 0 || PLUGBOARD[i] >= MOD || PLUGBOARD[PLUGBOARD[i]] != i) {
+            fprintf(stderr, "Erreur : Plugboard non valide pour %d -> %d.\n", i, PLUGBOARD[i]);
+            exit(EXIT_FAILURE);
+        }
+        counts[PLUGBOARD[i]]++;
+    }
+
+    for (int i = 0; i < MOD; i++) {
+        if (counts[i] != 1) {
+            fprintf(stderr, "Erreur : Plugboard n'est pas bijectif.\n");
+            exit(EXIT_FAILURE);
+        }
+    }
+    if (logFile) fprintf(logFile, "Plugboard validé avec succès.\n");
+}
+
 
 void validateReflectors() {
     for (int r = 0; r < 3; r++) {
@@ -177,6 +205,7 @@ void validateReflectors() {
             }
         }
     }
+    if (logFile) fprintf(logFile, "Réflecteurs validés avec succès.\n");
 }
 
 
@@ -207,16 +236,32 @@ void loadKey(const char *keyFile, int isMessageKey) {
         // Ignorer les lignes vides ou les commentaires
         if (line[0] == '#' || line[0] == '\n') continue;
 
-        // Scanner les données
+        // Scanner les données pour les rotors
         if (lineCount < ROT) {
-            int res = sscanf(line, "%hhu %hhu %hhu %hhu", &rotor_order[lineCount], &rotor_positions[lineCount], &rotor_cores[lineCount], &rotor_fixed[lineCount]);
+            int res = sscanf(line, "%hhu %hhu %hhu %hhu", 
+                             &rotor_order[lineCount], 
+                             &rotor_positions[lineCount], 
+                             &rotor_cores[lineCount], 
+                             &rotor_fixed[lineCount]);
             if (res != 4) {
                 fprintf(stderr, "Erreur dans la lecture de la clé à la ligne %d. Ligne : %s\n", lineCount + 1, line);
                 exit(EXIT_FAILURE);
             }
-            printf("Rotor %d : %hhu %hhu %hhu %hhu\n", lineCount, rotor_order[lineCount], rotor_positions[lineCount], rotor_cores[lineCount], rotor_fixed[lineCount]);
+
+            // Corriger la position si elle dépasse le MOD
+            if (rotor_positions[lineCount] >= MOD) {
+                printf("Correction : Rotor %d position=%hhu dépassait MOD=%d, corrigé à %hhu\n", 
+                       lineCount, rotor_positions[lineCount], MOD, rotor_positions[lineCount] % MOD);
+                rotor_positions[lineCount] %= MOD;
+            }
+
+            printf("Rotor %d : ordre=%hhu, position=%hhu, face=%hhu, fixe=%hhu\n", 
+                   lineCount, rotor_order[lineCount], rotor_positions[lineCount], 
+                   rotor_cores[lineCount], rotor_fixed[lineCount]);
             lineCount++;
-        } else if (isMessageKey && lineCount == ROT) {
+        } 
+        // Scanner les données pour le réflecteur actif
+        else if (isMessageKey && lineCount == ROT) {
             int res = sscanf(line, "%d", &active_reflector);
             if (res != 1) {
                 fprintf(stderr, "Erreur dans la lecture du réflecteur actif. Ligne : %s\n", line);
@@ -227,6 +272,7 @@ void loadKey(const char *keyFile, int isMessageKey) {
         }
     }
 
+    // Vérification de la complétude
     if (lineCount < ROT || (isMessageKey && lineCount != ROT + 1)) {
         fprintf(stderr, "Le fichier de clé ne contient pas assez de lignes valides.\n");
         exit(EXIT_FAILURE);
@@ -311,11 +357,13 @@ void saveTape(const char *filename, const byte *tape, size_t length, const char 
 
 // Simulation du pas des rotors avec broches de blocage
 void stepRotors() {
-    printf("Pas des rotors avant : ");
-    for (int i = 0; i < ROT; i++) {
-        printf("%d ", rotor_positions[i]);
+    if (logFile) {
+        fprintf(logFile, "Pas des rotors avant : ");
+        for (int i = 0; i < ROT; i++) {
+            fprintf(logFile, "%d ", rotor_positions[i]);
+        }
+        fprintf(logFile, "\n");
     }
-    printf("\n");
 
     for (int i = 0; i < ROT; i++) {
         int rotorIndex = rotor_order[i];
@@ -326,11 +374,13 @@ void stepRotors() {
         }
     }
 
-    printf("Pas des rotors après : ");
-    for (int i = 0; i < ROT; i++) {
-        printf("%d ", rotor_positions[i]);
+    if (logFile) {
+        fprintf(logFile, "Pas des rotors après : ");
+        for (int i = 0; i < ROT; i++) {
+            fprintf(logFile, "%d ", rotor_positions[i]);
+        }
+        fprintf(logFile, "\n");
     }
-    printf("\n");
 }
 
 // Substitution avec plugboard
@@ -341,56 +391,80 @@ byte plugboardSubstitute(byte input) {
 // Substitution via un rotor
 byte rotorSubstitute(byte input, int rotor, int forward) {
     byte core = rotor_cores[rotor];
+    byte pos = rotor_positions[rotor];
+
     if (forward) {
-        return ROTOR[rotor][core][(input + rotor_positions[rotor]) % MOD];
+        byte mapped = (ROTOR[rotor][core][(input + pos) % MOD] - pos + MOD) % MOD;
+        if (logFile) fprintf(logFile, "Rotor %d forward: %c -> %c\n", rotor, input + 'A', mapped + 'A');
+        return mapped;
     } else {
-        return ROTOR_INV[rotor][core][(input + rotor_positions[rotor]) % MOD];
+        byte mapped = (ROTOR_INV[rotor][core][(input + pos) % MOD] - pos + MOD) % MOD;
+        if (logFile) fprintf(logFile, "Rotor %d reverse: %c -> %c\n", rotor, input + 'A', mapped + 'A');
+        return mapped;
     }
 }
 
 // Traitement d'un caractère
 byte processByte(byte input, int mode) {
     byte original = input;
+    if (logFile) fprintf(logFile, "Original: %c\n", original + 'A');
+
     byte output = plugboardSubstitute(input);
+    if (logFile) fprintf(logFile, "After Plugboard: %c\n", output + 'A');
 
     output = ENTRY_DISC[output];
+    if (logFile) fprintf(logFile, "After Entry Disc: %c\n", output + 'A');
+
     for (int i = 0; i < ROT; i++) {
         output = rotorSubstitute(output, rotor_order[i], 1);
+        if (logFile) fprintf(logFile, "After Rotor %d (forward): %c\n", i, output + 'A');
     }
 
     output = REFLECTORS[active_reflector][output];
+    if (logFile) fprintf(logFile, "After Reflector: %c\n", output + 'A');
 
     for (int i = ROT - 1; i >= 0; i--) {
         output = rotorSubstitute(output, rotor_order[i], 0);
+        if (logFile) fprintf(logFile, "After Rotor %d (reverse): %c\n", i, output + 'A');
     }
 
     output = ENTRY_DISC[output];
-    output = plugboardSubstitute(output);
+    if (logFile) fprintf(logFile, "After Entry Disc: %c\n", output + 'A');
 
-    if (mode == 1) {
-        stepRotors();
-    }
+    output = plugboardSubstitute(output);
+    if (logFile) fprintf(logFile, "Final Output: %c\n", output + 'A');
 
     if (mode == 0 && original != output) {
-        printf("Erreur : ProcessByte n'est pas réversible pour %c -> %c -> %c\n",
-               original + 'A', input + 'A', output + 'A');
+        if (logFile) fprintf(logFile, "Erreur : ProcessByte n'est pas réversible pour %c -> %c -> %c\n",
+                             original + 'A', input + 'A', output + 'A');
     }
 
     return output;
 }
 
-// Chiffrement d'un texte clair
-void encrypt(byte *plaintext, byte *ciphertext, size_t length) {
-    for (size_t i = 0; i < length; i++) {
-        ciphertext[i] = processByte(plaintext[i], 1);
-    }
+void resetRotors(const byte *initial_positions, const byte *initial_cores) {
+    memcpy(rotor_positions, initial_positions, ROT);
+    memcpy(rotor_cores, initial_cores, ROT);
 }
 
-// Déchiffrement d'un texte chiffré
-void decrypt(byte *ciphertext, byte *plaintext, size_t length) {
+void encrypt(byte *plaintext, byte *ciphertext, size_t length) { //Chiffrement d'un texte
+    if (logFile) fprintf(logFile, "Début du chiffrement :\n");
+    for (size_t i = 0; i < length; i++) {
+        ciphertext[i] = processByte(plaintext[i], 1);
+        if (logFile) fprintf(logFile, "Plaintext[%zu]: %c -> Ciphertext[%zu]: %c\n",
+                             i, plaintext[i] + 'A', i, ciphertext[i] + 'A');
+    }
+    if (logFile) fprintf(logFile, "Fin du chiffrement.\n");
+}
+
+void decrypt(byte *ciphertext, byte *plaintext, size_t length) { //Déchiffrement d'un texte chiffré
+    if (logFile) fprintf(logFile, "Début du déchiffrement :\n");
     for (size_t i = 0; i < length; i++) {
         plaintext[i] = processByte(ciphertext[i], 0);
+        if (logFile) fprintf(logFile, "Ciphertext[%zu]: %c -> Plaintext[%zu]: %c\n",
+                             i, ciphertext[i] + 'A', i, plaintext[i] + 'A');
     }
+    if (logFile) fprintf(logFile, "Fin du déchiffrement.\n");
 }
 
 // Écriture des résultats dans un fichier unique
@@ -427,6 +501,14 @@ void saveResults(const char *filename, const byte *before, const byte *after, co
 }
 
 int main() {
+
+    // Ouvrir le fichier de log
+    logFile = fopen("machine_actions.log", "w");
+    if (!logFile) {
+        perror("Erreur lors de l'ouverture du fichier de log");
+        exit(EXIT_FAILURE);
+    }
+
     // Initialiser les paramètres par défaut
     initializeDefaults();
 
@@ -447,24 +529,22 @@ int main() {
     byte outputTape[MAX_TAPE];
     byte decryptedTape[MAX_TAPE];
 
-    // Sauvegarder les positions initiales des rotors
+    // Sauvegarder les états initiaux des rotors
     byte initial_positions[ROT];
+    byte initial_cores[ROT];
     memcpy(initial_positions, rotor_positions, ROT);
+    memcpy(initial_cores, rotor_cores, ROT);
 
     // Chiffrement
     encrypt(inputTape, outputTape, length);
 
-    // Réinitialiser les positions des rotors
-    memcpy(rotor_positions, initial_positions, ROT);
+    // Réinitialiser les rotors avant le déchiffrement
+    resetRotors(initial_positions, initial_cores);
 
     // Déchiffrement
     decrypt(outputTape, decryptedTape, length);
 
-    memcpy(rotor_positions, initial_positions, ROT);
-    memcpy(rotor_cores, initial_positions, ROT);
-
-
-    // Sauvegarder les résultats dans un seul fichier
+    // Sauvegarder les résultats dans un fichier
     saveResults("output.tape", inputTape, outputTape, decryptedTape, length);
 
     printf("Chiffrement et déchiffrement terminés. Consultez 'output.tape' pour les résultats.\n");
