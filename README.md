@@ -1,4 +1,6 @@
-html <div> center# Fialka M-125 | ФИАЛКА M-125
+<div style="text-align: center;">
+    <h1 style="font-size: 3em; font-weight: bold;">Fialka M-125 | ФИАЛКА M-125</h1>
+</div>
 
 ![Machine Fialka](https://www.cryptomuseum.com/crypto/fialka/m125/img/302790/003/full.jpg)
 *Machine Fialka (M-125) utilisée pour le chiffrement des communications pendant la guerre froide.*
@@ -21,12 +23,12 @@ html <div> center# Fialka M-125 | ФИАЛКА M-125
 6. [Structure du Code](#structure-du-code)
 7. [Installation et Configuration](#installation-et-configuration)
 8. [Utilisation du Programme](#utilisation-du-programme)
-9. [Fichiers Créés Par Défaut en Cas de Non-Détection)
+9. [Fichiers Créés Par Défaut en Cas de Non-Détection](#Fichiers-Créés-Par-Défaut-en-Cas-de-Non-Détection)
 
 
 ---
 
-## Introduction
+# Introduction
 
 Le projet **Fialka** simule le fonctionnement d'une machine de chiffrement complexe utilisée par l'Union Soviétique pendant la guerre froide. Conçue pour sécuriser les communications sensibles, cette machine à rotors utilise des principes cryptographiques similaires à ceux de la machine **Enigma**, mais avec des caractéristiques plus avancées et complexes, telles que des configurations dynamiques des rotors et un système de **plugboard** pour les substitutions de caractères.
 
@@ -46,11 +48,16 @@ Le but du projet est de fournir une compréhension de cette machine en implémen
 - **Visualisation de l'État de la Machine** : L'état actuel de la machine (positions des rotors, configuration du plugboard et réflecteur) peut être affiché à tout moment.
 - **Sauvegarde des Résultats** : Le programme permet de sauvegarder les textes avant et après chiffrement et déchiffrement, ainsi que les configurations utilisées dans des fichiers.
 
-## Histoire de la Machine Fialka
+# Histoire de la Machine Fialka
 
 ### Origines et Contexte Historique
 
-La machine **Fialka** (M-125) a été développée dans les années 1950 par l'Union Soviétique, pendant la guerre froide, pour sécuriser les communications militaires et diplomatiques. Elle était destinée à remplacer des systèmes de chiffrement plus anciens et moins sécurisés. La machine Fialka fait partie des **machines à rotors**, qui utilisent des cycles de permutations complexes pour chiffrer et déchiffrer des messages. Contrairement à des machines comme l'Enigma, qui étaient basées sur un nombre relativement restreint de configurations possibles, la Fialka intègre des composants supplémentaires permettant de sécuriser encore davantage les communications.
+Le M-125, nom de code **Fialka (russe : ФИАЛКА)**, était une machine de chiffrement électromécanique à roue, développée en URSS peu après la Seconde Guerre mondiale. Introduit pour la première fois en 1956, elle est rapidement devenu une des machines préférées du Pacte de Varsovie et de certains pays alliés, comme Cuba. Cette machine est similaire au SIGABA américain, au KL-7, et, dans une moindre mesure, à l’Enigma, raison pour laquelle elle est parfois surnommée "l’Enigma russe".
+
+La machine a **10 rotors de chiffrement**, chacun avec **30 contacts de chaque côté**. Les rotors adjacents se déplacent dans des directions opposées. De plus, la machine dispose d’un lecteur de carte dans lequel une nouvelle carte-clé perforée était installée quotidiennement, ainsi qu'une imprimante, un lecteur de bande et un perforateur de bande.
+
+Chaque pays du Pacte de Varsovie disposait de sa propre version personnalisée de la Fialka, adaptée à la langue locale, avec son propre clavier et sa tête d’impression spécifique. Cependant, le câblage interne des roues était également distinct pour chaque pays.
+
 
 ### Comparaison avec la Machine Enigma
 
@@ -65,7 +72,7 @@ La machine Fialka, tout comme l'Enigma, utilise des **rotors** pour permuter les
 
 La machine Fialka repose sur un système complexe de **rotors**, chacun capable de permuter les lettres en fonction de sa position et de sa face active. Chaque rotor contient une **permutation** unique de l'alphabet (30 caractères dans le cas de la Fialka), et la position du rotor détermine l'ordre des lettres qu'il va permuter. Les rotors sont tournés après chaque lettre chiffrée, et le plugboard permet d'introduire une couche supplémentaire de substitution.
 
-## Théorie et Mathématiques Derrière le Chiffrement
+# Théorie et Mathématiques Derrière le Chiffrement
 
 ### Les Rotors et leur Fonctionnement Mathématique
 
@@ -97,7 +104,7 @@ Le chiffrement est ainsi basé sur un enchaînement de transformations permutati
 
 Le code implémente la simulation de la machine Fialka en suivant les principes cryptographiques décrits ci-dessus. Il utilise des tables de permutations pour les rotors, gère le mécanisme du plugboard et du réflecteur, et permet à l'utilisateur de configurer la machine selon ses besoins. Le programme simule également le pas des rotors et permet de chiffrer et déchiffrer des messages en utilisant une clé spécifique.
 
-## Installation et Configuration
+# Installation et Configuration
 
 ### Prérequis
 
