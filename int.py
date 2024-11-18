@@ -1,163 +1,232 @@
 import os
 import subprocess
-import shutil
-
-# Couleurs pour une touche esthétique soviétique
-RED = '\033[91m'
-CYAN = '\033[96m'
-BOLD = '\033[1m'
-RESET = '\033[0m'
-
-# Récupérer la largeur du terminal pour centrer le contenu
-def get_terminal_width():
-    return shutil.get_terminal_size().columns
-
-def center_text(text):
-    term_width = get_terminal_width()
-    text_width = len(text)
-    if text_width >= term_width:
-        return text  # Pas de centrage si le texte dépasse la largeur du terminal
-    padding = (term_width - text_width) // 2
-    return " " * padding + text
-
-def display_centered(lines):
-    for line in lines:
-        print(center_text(line))
-
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-def main_menu():
-    clear_screen()
-    lines = [
-        f"{RED}{BOLD}===========================================================",
-        "███████╗██╗ █████╗ ██╗      █████╗ ██╗  ██╗ █████╗ ",
-        "██╔════╝██║██╔══██╗██║     ██╔══██╗██║ ██╔╝██╔══██╗",
-        "███████╗██║███████║██║     ███████║█████╔╝ ███████║",
-        "╚════██║██║██╔══██║██║     ██╔══██║██╔═██╗ ██╔══██║",
-        "███████║██║██║  ██║███████╗██║  ██║██║  ██╗██║  ██║",
-        "╚══════╝╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝",
-        "         ██████╗ ███╗   ███╗██╗   ██╗ █████╗ ",
-        "        ██╔═══██╗████╗ ████║██║   ██║██╔══██╗",
-        "        ██║   ██║██╔████╔██║██║   ██║███████║",
-        "        ██║   ██║██║╚██╔╝██║██║   ██║██╔══██║",
-        "        ╚██████╔╝██║ ╚═╝ ██║╚██████╔╝██║  ██║",
-        "         ╚═════╝ ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝",
-        "-----------------------------------------------------------",
-        "          Симулятор Шифровальной Машины ФИАЛКА",
-        "             (Simulateur de Machine Fialka)               ",
-        "===========================================================",
-        "[1] ► CHIFFRER UN TEXTE",
-        "[2] ► DÉCHIFFRER UN TEXTE",
-        "[3] ► CONFIGURER LA MACHINE",
-        "[4] ► ÉTAT ACTUEL DE LA MACHINE",
-        "[5] ► QUITTER",
-        "===========================================================",
-        f"{CYAN}ENTREZ UNE COMMANDE : _{RESET}"
-    ]
-    display_centered(lines)
+import curses
 
 def execute_c_program(mode, input_file=None, output_file=None):
+    """
+    Exécute le programme C avec des arguments spécifiques.
+    """
     command = ["./fi"]
     if mode == "encrypt":
-        command.extend([input_file, output_file])
+        command.extend(["-e", input_file, output_file])
     elif mode == "decrypt":
-        command.extend([input_file, output_file])
-    
+        command.extend(["-d", input_file, output_file])
+    elif mode == "status":
+        command.append("-s")
+    elif mode == "configure":
+        command.append("-c")
+
     try:
         result = subprocess.run(command, capture_output=True, text=True, check=True)
-        print(result.stdout)
+        return result.stdout.strip()
     except subprocess.CalledProcessError as e:
-        print(f"{RED}Erreur lors de l'exécution : {e.stderr}{RESET}")
+        return f"Erreur lors de l'exécution : {e.stderr.strip()}"
 
-def encryption_menu():
-    clear_screen()
-    lines = [
-        f"{CYAN}{BOLD}===========================================================",
-        "   MODE : CHIFFREMENT DU TEXTE (ЗАШИФРОВКА)              ",
-        "===========================================================",
-        "[ИНСТРУКЦИЯ] Entrez le chemin du fichier contenant le texte clair : ",
-    ]
-    display_centered(lines)
-    input_file = input("Fichier d'entrée : ")
-    output_file = input("Fichier de sortie : ")
-    execute_c_program("encrypt", input_file, output_file)
+def draw_boxed_window(stdscr, content, title=""):
+    """
+    Affiche le contenu dans une fenêtre avec un encadré.
+    La taille de la fenêtre et la pagination sont dynamiques en fonction de la taille du terminal.
+    """
+    stdscr.clear()
+    height, width = stdscr.getmaxyx()
 
-def decryption_menu():
-    clear_screen()
-    lines = [
-        f"{CYAN}{BOLD}===========================================================",
-        "   MODE : DÉCHIFFREMENT DU TEXTE (РАСШИФРОВКА)           ",
-        "===========================================================",
-        "[ИНСТРУКЦИЯ] Entrez le chemin du fichier contenant le texte chiffré : ",
-    ]
-    display_centered(lines)
-    input_file = input("Fichier d'entrée : ")
-    output_file = input("Fichier de sortie : ")
-    execute_c_program("decrypt", input_file, output_file)
+    # Définir la largeur de la fenêtre et le nombre de lignes par page en fonction de la taille du terminal
+    box_width = min(width - 4, 80)  # Largeur maximale de la boîte
+    box_height = min(height - 6, len(content) + 6)
 
-def config_menu():
-    clear_screen()
-    lines = [
-        f"{CYAN}{BOLD}===========================================================",
-        "        CONFIGURATION DE LA MACHINE (КОНФИГУРАЦИЯ)        ",
-        "===========================================================",
-        "[1] ► MODIFIER LA CLÉ QUOTIDIENNE",
-        "[2] ► MODIFIER LA CLÉ DE MESSAGE",
-        "[3] ► CONFIGURER LE PLUGBOARD",
-        "[4] ► RETOUR",
-        "===========================================================",
-        f"{CYAN}ENTREZ UNE OPTION : _{RESET}"
-    ]
-    display_centered(lines)
-    choice = input().strip()
-    if choice == "1":
-        print(f"{CYAN}Modification de la clé quotidienne...{RESET}")
-    elif choice == "2":
-        print(f"{CYAN}Modification de la clé de message...{RESET}")
-    elif choice == "3":
-        print(f"{CYAN}Configuration du plugboard...{RESET}")
-    elif choice == "4":
-        return
-    else:
-        print(f"{RED}Option invalide!{RESET}")
+    start_y = max((height - box_height) // 2, 0)
+    start_x = max((width - box_width) // 2, 0)
 
-def status_menu():
-    clear_screen()
-    lines = [
-        f"{CYAN}{BOLD}===========================================================",
-        "          ÉTAT DE LA MACHINE (СТАТУС МАШИНЫ)              ",
-        "===========================================================",
-        "ROTORS :",
-        " • ROTOR 0 : Position = 6, Ordre = 0, Fixe = Non",
-        " • ROTOR 1 : Position = 11, Ordre = 1, Fixe = Non",
-        " ...",
-        "RÉFLECTEUR ACTIF : 2",
-        "PLUGBOARD : ",
-        "  A <-> Z  |  B <-> Y  |  C <-> X  |  ...",
-        "===========================================================",
-        "Appuyez sur Entrée pour revenir au menu principal.",
+    # Dessiner la bordure de la boîte
+    for i in range(box_height):
+        stdscr.addstr(start_y + i, start_x, "│")
+        stdscr.addstr(start_y + i, start_x + box_width - 1, "│")
+    stdscr.addstr(start_y, start_x, "┌" + "─" * (box_width - 2) + "┐")
+    stdscr.addstr(start_y + box_height - 1, start_x, "└" + "─" * (box_width - 2) + "┘")
+
+    if title:
+        title_str = f" {title} "
+        title_x = start_x + (box_width - len(title_str)) // 2
+        stdscr.addstr(start_y, title_x, title_str, curses.A_BOLD)
+
+    # Affichage des lignes pour la page actuelle
+    for idx, line in enumerate(content):
+        # Si l'index dépasse la taille de l'écran, on ne l'affiche pas
+        if start_y + 2 + idx < start_y + box_height - 1:
+            truncated_line = line[:box_width - 4]
+            # Prévenir le débordement de texte
+            if len(truncated_line) > width - start_x - 4:
+                truncated_line = truncated_line[:width - start_x - 4]
+            stdscr.addstr(start_y + 2 + idx, start_x + 2, truncated_line)
+
+    # Affichage de la pagination si nécessaire
+    total_pages = (len(content) // box_height) + (1 if len(content) % box_height != 0 else 0)
+    pagination_info = f"Page {1}/{total_pages}"
+    stdscr.addstr(height - 3, (width - len(pagination_info)) // 2, pagination_info, curses.A_BOLD)
+
+    stdscr.refresh()
+    stdscr.getch()
+
+def encryption_menu(stdscr):
+    curses.echo()
+    stdscr.clear()
+    height, width = stdscr.getmaxyx()
+
+    input_file_msg = "Entrez le chemin du fichier clair :"
+    output_file_msg = "Entrez le chemin pour sauvegarder le texte chiffré :"
+
+    stdscr.addstr(height // 2 - 2, (width - len(input_file_msg)) // 2, input_file_msg)
+    input_file = stdscr.getstr(height // 2 - 1, (width - len(input_file_msg)) // 2, 50).decode("utf-8")
+
+    stdscr.addstr(height // 2 + 1, (width - len(output_file_msg)) // 2, output_file_msg)
+    output_file = stdscr.getstr(height // 2 + 2, (width - len(output_file_msg)) // 2, 50).decode("utf-8")
+    curses.noecho()
+
+    stdscr.clear()
+    result = execute_c_program("encrypt", input_file, output_file)
+    draw_boxed_window(stdscr, [result], title="CHIFFREMENT TERMINÉ")
+
+def decryption_menu(stdscr):
+    curses.echo()
+    stdscr.clear()
+    height, width = stdscr.getmaxyx()
+
+    input_file_msg = "Entrez le chemin du fichier chiffré :"
+    output_file_msg = "Entrez le chemin pour sauvegarder le texte déchiffré :"
+
+    stdscr.addstr(height // 2 - 2, (width - len(input_file_msg)) // 2, input_file_msg)
+    input_file = stdscr.getstr(height // 2 - 1, (width - len(input_file_msg)) // 2, 50).decode("utf-8")
+
+    stdscr.addstr(height // 2 + 1, (width - len(output_file_msg)) // 2, output_file_msg)
+    output_file = stdscr.getstr(height // 2 + 2, (width - len(output_file_msg)) // 2, 50).decode("utf-8")
+    curses.noecho()
+
+    stdscr.clear()
+    result = execute_c_program("decrypt", input_file, output_file)
+    draw_boxed_window(stdscr, [result], title="DÉCHIFFREMENT TERMINÉ")
+
+def config_menu(stdscr):
+    """
+    Sous-menu pour configurer la machine avec plusieurs options.
+    """
+    options = [
+        "MODIFIER LA CLÉ QUOTIDIENNE",
+        "MODIFIER LA CLÉ DE MESSAGE",
+        "CONFIGURER LE PLUGBOARD",
+        "RETOUR"
     ]
-    display_centered(lines)
-    input()
+    current_row = 0
+
+    while True:
+        stdscr.clear()
+        height, width = stdscr.getmaxyx()
+
+        title = "CONFIGURATION DE LA MACHINE"
+        stdscr.addstr(2, (width - len(title)) // 2, title, curses.A_BOLD)
+
+        # Afficher les options
+        for idx, option in enumerate(options):
+            x = (width - len(option) - 4) // 2
+            y = idx + 6
+            if idx == current_row:
+                stdscr.addstr(y, x, f"► {option}", curses.color_pair(1) | curses.A_BOLD)
+            else:
+                stdscr.addstr(y, x, f"  {option}", curses.color_pair(2))
+
+        stdscr.refresh()
+        key = stdscr.getch()
+
+        if key == curses.KEY_UP and current_row > 0:
+            current_row -= 1
+        elif key == curses.KEY_DOWN and current_row < len(options) - 1:
+            current_row += 1
+        elif key == curses.KEY_ENTER or key in [10, 13]:
+            if current_row == 0:
+                result = execute_c_program("configure")  # Simulation pour clé quotidienne
+                draw_boxed_window(stdscr, result.splitlines(), title="CLÉ QUOTIDIENNE MODIFIÉE")
+            elif current_row == 1:
+                result = execute_c_program("configure")  # Simulation pour clé de message
+                draw_boxed_window(stdscr, result.splitlines(), title="CLÉ DE MESSAGE MODIFIÉE")
+            elif current_row == 2:
+                result = execute_c_program("configure")  # Simulation pour plugboard
+                draw_boxed_window(stdscr, result.splitlines(), title="PLUGBOARD CONFIGURÉ")
+            elif current_row == 3:
+                break  # Retourner au menu principal
+
+def status_menu(stdscr):
+    """
+    Sous-menu pour afficher l'état actuel de la machine.
+    """
+    stdscr.clear()
+    height, width = stdscr.getmaxyx()
+
+    result = execute_c_program("status")
+    draw_boxed_window(stdscr, result.splitlines(), title="ÉTAT ACTUEL DE LA MACHINE")
+
+def draw_menu(stdscr):
+    curses.curs_set(0)
+    curses.start_color()
+    curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK)
+    curses.init_pair(2, curses.COLOR_WHITE, curses.COLOR_BLACK)
+
+    menu = [
+        "CHIFFRER UN TEXTE",
+        "DÉCHIFFRER UN TEXTE",
+        "CONFIGURER LA MACHINE",
+        "ÉTAT ACTUEL DE LA MACHINE",
+        "QUITTER"
+    ]
+    current_row = 0
+
+    while True:
+        stdscr.clear()
+        height, width = stdscr.getmaxyx()
+
+        header = [
+            "############################################################",
+            "##                                                        ##",
+            "##        Фиалка: СИМУЛЯТОР КРИПТОГРАФИЧЕСКОЙ МАШИНЫ      ##",
+            "##                                                        ##"
+        ]
+        for idx, line in enumerate(header):
+            stdscr.addstr(idx, (width - len(line)) // 2, line, curses.A_BOLD)
+
+        for idx, row in enumerate(menu):
+            x = (width - len(row) - 4) // 2
+            y = idx + 6
+            if idx == current_row:
+                stdscr.addstr(y, x, f"► {row}", curses.color_pair(1) | curses.A_BOLD)
+            else:
+                stdscr.addstr(y, x, f"  {row}", curses.color_pair(2))
+
+        footer = [
+            "############################################################",
+            ">> UTILISEZ LES FLÈCHES POUR NAVIGUER ET APPUYEZ SUR ENTRÉE"
+        ]
+        for idx, line in enumerate(footer):
+            stdscr.addstr(height - len(footer) + idx - 1, (width - len(line)) // 2, line, curses.A_BOLD)
+
+        stdscr.refresh()
+        key = stdscr.getch()
+
+        if key == curses.KEY_UP and current_row > 0:
+            current_row -= 1
+        elif key == curses.KEY_DOWN and current_row < len(menu) - 1:
+            current_row += 1
+        elif key == curses.KEY_ENTER or key in [10, 13]:
+            if current_row == 0:
+                encryption_menu(stdscr)
+            elif current_row == 1:
+                decryption_menu(stdscr)
+            elif current_row == 2:
+                config_menu(stdscr)
+            elif current_row == 3:
+                status_menu(stdscr)
+            elif current_row == 4:
+                break  # Quitter l'application
 
 def main():
-    while True:
-        main_menu()
-        choice = input().strip()
-        if choice == "1":
-            encryption_menu()
-        elif choice == "2":
-            decryption_menu()
-        elif choice == "3":
-            config_menu()
-        elif choice == "4":
-            status_menu()
-        elif choice == "5":
-            print(f"{RED}Merci d'avoir utilisé la Machine Fialka!{RESET}")
-            break
-        else:
-            print(f"{RED}Option invalide, essayez à nouveau!{RESET}")
+    curses.wrapper(draw_menu)
 
 if __name__ == "__main__":
     main()

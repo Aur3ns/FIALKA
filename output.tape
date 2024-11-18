@@ -2,7 +2,7 @@ Texte avant chiffrement :
 HELLOFIALKA
 
 Texte après chiffrement :
-ADWWFOXHWCH
+S^BBQMUYB[Y
 
 Texte après déchiffrement :
 HELLOFIALKA
