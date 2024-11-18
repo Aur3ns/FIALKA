@@ -21,8 +21,8 @@
 6. [Structure du Code](#structure-du-code)
 7. [Installation et Configuration](#installation-et-configuration)
 8. [Utilisation du Programme](#utilisation-du-programme)
-9. [Détails des Fonctionnalités](#détails-des-fonctionnalités)
-10. [Conclusions et Perspectives](#conclusions-et-perspectives)
+9. [Fichiers Créés Par Défaut en Cas de Non-Détection)
+
 
 ---
 
