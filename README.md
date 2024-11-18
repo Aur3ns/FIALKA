@@ -108,7 +108,7 @@ Le code implémente la simulation de la machine Fialka en suivant les principes 
 
 1. Clonez le projet :
    ```bash
-   git clone https://github.com/username/fialka-simulator.git
+   git clone https://github.com/BlackBird63030/FIALKA.git 
    ```
 2. Ouvrez le repo :
    ```bash
@@ -117,7 +117,7 @@ Le code implémente la simulation de la machine Fialka en suivant les principes 
 
 3. Compilez le programme :
    ```bash
-   gcc -o fialka fialka.c
+   gcc -o fi fi.c
    ```bash
 
 4. Exécutez le programme :
