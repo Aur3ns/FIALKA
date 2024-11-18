@@ -1,0 +1,1051 @@
+Réflecteurs validés avec succès.
+Plugboard validé avec succès.
+Début du chiffrement :
+Original: H
+After Plugboard: G
+After Entry Disc: G
+Rotor 0 forward: G -> A
+After Rotor 0 (forward): A
+Rotor 1 forward: A -> N
+After Rotor 1 (forward): N
+Rotor 2 forward: N -> E
+After Rotor 2 (forward): E
+Rotor 3 forward: E -> V
+After Rotor 3 (forward): V
+Rotor 4 forward: V -> P
+After Rotor 4 (forward): P
+Rotor 5 forward: P -> [
+After Rotor 5 (forward): [
+Rotor 6 forward: [ -> R
+After Rotor 6 (forward): R
+Rotor 7 forward: R -> A
+After Rotor 7 (forward): A
+Rotor 8 forward: A -> R
+After Rotor 8 (forward): R
+Rotor 9 forward: R -> T
+After Rotor 9 (forward): T
+After Reflector: B
+Rotor 9 reverse: B -> M
+After Rotor 9 (reverse): M
+Rotor 8 reverse: M -> E
+After Rotor 8 (reverse): E
+Rotor 7 reverse: E -> Y
+After Rotor 7 (reverse): Y
+Rotor 6 reverse: Y -> S
+After Rotor 6 (reverse): S
+Rotor 5 reverse: S -> C
+After Rotor 5 (reverse): C
+Rotor 4 reverse: C -> R
+After Rotor 4 (reverse): R
+Rotor 3 reverse: R -> Y
+After Rotor 3 (reverse): Y
+Rotor 2 reverse: Y -> B
+After Rotor 2 (reverse): B
+Rotor 1 reverse: B -> D
+After Rotor 1 (reverse): D
+Rotor 0 reverse: D -> B
+After Rotor 0 (reverse): B
+After Entry Disc: B
+Final Output: A
+Plaintext[0]: H -> Ciphertext[0]: A
+Original: E
+After Plugboard: F
+After Entry Disc: F
+Rotor 0 forward: F -> O
+After Rotor 0 (forward): O
+Rotor 1 forward: O -> T
+After Rotor 1 (forward): T
+Rotor 2 forward: T -> X
+After Rotor 2 (forward): X
+Rotor 3 forward: X -> D
+After Rotor 3 (forward): D
+Rotor 4 forward: D -> Y
+After Rotor 4 (forward): Y
+Rotor 5 forward: Y -> P
+After Rotor 5 (forward): P
+Rotor 6 forward: P -> F
+After Rotor 6 (forward): F
+Rotor 7 forward: F -> I
+After Rotor 7 (forward): I
+Rotor 8 forward: I -> \
+After Rotor 8 (forward): \
+Rotor 9 forward: \ -> H
+After Rotor 9 (forward): H
+After Reflector: C
+Rotor 9 reverse: C -> U
+After Rotor 9 (reverse): U
+Rotor 8 reverse: U -> \
+After Rotor 8 (reverse): \
+Rotor 7 reverse: \ -> S
+After Rotor 7 (reverse): S
+Rotor 6 reverse: S -> B
+After Rotor 6 (reverse): B
+Rotor 5 reverse: B -> Q
+After Rotor 5 (reverse): Q
+Rotor 4 reverse: Q -> K
+After Rotor 4 (reverse): K
+Rotor 3 reverse: K -> J
+After Rotor 3 (reverse): J
+Rotor 2 reverse: J -> I
+After Rotor 2 (reverse): I
+Rotor 1 reverse: I -> P
+After Rotor 1 (reverse): P
+Rotor 0 reverse: P -> C
+After Rotor 0 (reverse): C
+After Entry Disc: C
+Final Output: D
+Plaintext[1]: E -> Ciphertext[1]: D
+Original: L
+After Plugboard: K
+After Entry Disc: K
+Rotor 0 forward: K -> [
+After Rotor 0 (forward): [
+Rotor 1 forward: [ -> ]
+After Rotor 1 (forward): ]
+Rotor 2 forward: ] -> N
+After Rotor 2 (forward): N
+Rotor 3 forward: N -> G
+After Rotor 3 (forward): G
+Rotor 4 forward: G -> R
+After Rotor 4 (forward): R
+Rotor 5 forward: R -> X
+After Rotor 5 (forward): X
+Rotor 6 forward: X -> P
+After Rotor 6 (forward): P
+Rotor 7 forward: P -> Y
+After Rotor 7 (forward): Y
+Rotor 8 forward: Y -> J
+After Rotor 8 (forward): J
+Rotor 9 forward: J -> W
+After Rotor 9 (forward): W
+After Reflector: O
+Rotor 9 reverse: O -> Z
+After Rotor 9 (reverse): Z
+Rotor 8 reverse: Z -> D
+After Rotor 8 (reverse): D
+Rotor 7 reverse: D -> W
+After Rotor 7 (reverse): W
+Rotor 6 reverse: W -> V
+After Rotor 6 (reverse): V
+Rotor 5 reverse: V -> E
+After Rotor 5 (reverse): E
+Rotor 4 reverse: E -> S
+After Rotor 4 (reverse): S
+Rotor 3 reverse: S -> [
+After Rotor 3 (reverse): [
+Rotor 2 reverse: [ -> U
+After Rotor 2 (reverse): U
+Rotor 1 reverse: U -> ^
+After Rotor 1 (reverse): ^
+Rotor 0 reverse: ^ -> X
+After Rotor 0 (reverse): X
+After Entry Disc: X
+Final Output: W
+Plaintext[2]: L -> Ciphertext[2]: W
+Original: L
+After Plugboard: K
+After Entry Disc: K
+Rotor 0 forward: K -> [
+After Rotor 0 (forward): [
+Rotor 1 forward: [ -> ]
+After Rotor 1 (forward): ]
+Rotor 2 forward: ] -> N
+After Rotor 2 (forward): N
+Rotor 3 forward: N -> G
+After Rotor 3 (forward): G
+Rotor 4 forward: G -> R
+After Rotor 4 (forward): R
+Rotor 5 forward: R -> X
+After Rotor 5 (forward): X
+Rotor 6 forward: X -> P
+After Rotor 6 (forward): P
+Rotor 7 forward: P -> Y
+After Rotor 7 (forward): Y
+Rotor 8 forward: Y -> J
+After Rotor 8 (forward): J
+Rotor 9 forward: J -> W
+After Rotor 9 (forward): W
+After Reflector: O
+Rotor 9 reverse: O -> Z
+After Rotor 9 (reverse): Z
+Rotor 8 reverse: Z -> D
+After Rotor 8 (reverse): D
+Rotor 7 reverse: D -> W
+After Rotor 7 (reverse): W
+Rotor 6 reverse: W -> V
+After Rotor 6 (reverse): V
+Rotor 5 reverse: V -> E
+After Rotor 5 (reverse): E
+Rotor 4 reverse: E -> S
+After Rotor 4 (reverse): S
+Rotor 3 reverse: S -> [
+After Rotor 3 (reverse): [
+Rotor 2 reverse: [ -> U
+After Rotor 2 (reverse): U
+Rotor 1 reverse: U -> ^
+After Rotor 1 (reverse): ^
+Rotor 0 reverse: ^ -> X
+After Rotor 0 (reverse): X
+After Entry Disc: X
+Final Output: W
+Plaintext[3]: L -> Ciphertext[3]: W
+Original: O
+After Plugboard: P
+After Entry Disc: P
+Rotor 0 forward: P -> K
+After Rotor 0 (forward): K
+Rotor 1 forward: K -> L
+After Rotor 1 (forward): L
+Rotor 2 forward: L -> T
+After Rotor 2 (forward): T
+Rotor 3 forward: T -> Q
+After Rotor 3 (forward): Q
+Rotor 4 forward: Q -> [
+After Rotor 4 (forward): [
+Rotor 5 forward: [ -> \
+After Rotor 5 (forward): \
+Rotor 6 forward: \ -> \
+After Rotor 6 (forward): \
+Rotor 7 forward: \ -> R
+After Rotor 7 (forward): R
+Rotor 8 forward: R -> S
+After Rotor 8 (forward): S
+Rotor 9 forward: S -> X
+After Rotor 9 (forward): X
+After Reflector: \
+Rotor 9 reverse: \ -> O
+After Rotor 9 (reverse): O
+Rotor 8 reverse: O -> W
+After Rotor 8 (reverse): W
+Rotor 7 reverse: W -> V
+After Rotor 7 (reverse): V
+Rotor 6 reverse: V -> A
+After Rotor 6 (reverse): A
+Rotor 5 reverse: A -> T
+After Rotor 5 (reverse): T
+Rotor 4 reverse: T -> N
+After Rotor 4 (reverse): N
+Rotor 3 reverse: N -> F
+After Rotor 3 (reverse): F
+Rotor 2 reverse: F -> W
+After Rotor 2 (reverse): W
+Rotor 1 reverse: W -> V
+After Rotor 1 (reverse): V
+Rotor 0 reverse: V -> E
+After Rotor 0 (reverse): E
+After Entry Disc: E
+Final Output: F
+Plaintext[4]: O -> Ciphertext[4]: F
+Original: F
+After Plugboard: E
+After Entry Disc: E
+Rotor 0 forward: E -> V
+After Rotor 0 (forward): V
+Rotor 1 forward: V -> W
+After Rotor 1 (forward): W
+Rotor 2 forward: W -> F
+After Rotor 2 (forward): F
+Rotor 3 forward: F -> N
+After Rotor 3 (forward): N
+Rotor 4 forward: N -> T
+After Rotor 4 (forward): T
+Rotor 5 forward: T -> A
+After Rotor 5 (forward): A
+Rotor 6 forward: A -> V
+After Rotor 6 (forward): V
+Rotor 7 forward: V -> W
+After Rotor 7 (forward): W
+Rotor 8 forward: W -> O
+After Rotor 8 (forward): O
+Rotor 9 forward: O -> \
+After Rotor 9 (forward): \
+After Reflector: X
+Rotor 9 reverse: X -> S
+After Rotor 9 (reverse): S
+Rotor 8 reverse: S -> R
+After Rotor 8 (reverse): R
+Rotor 7 reverse: R -> \
+After Rotor 7 (reverse): \
+Rotor 6 reverse: \ -> \
+After Rotor 6 (reverse): \
+Rotor 5 reverse: \ -> [
+After Rotor 5 (reverse): [
+Rotor 4 reverse: [ -> Q
+After Rotor 4 (reverse): Q
+Rotor 3 reverse: Q -> T
+After Rotor 3 (reverse): T
+Rotor 2 reverse: T -> L
+After Rotor 2 (reverse): L
+Rotor 1 reverse: L -> K
+After Rotor 1 (reverse): K
+Rotor 0 reverse: K -> P
+After Rotor 0 (reverse): P
+After Entry Disc: P
+Final Output: O
+Plaintext[5]: F -> Ciphertext[5]: O
+Original: I
+After Plugboard: J
+After Entry Disc: J
+Rotor 0 forward: J -> \
+After Rotor 0 (forward): \
+Rotor 1 forward: \ -> K
+After Rotor 1 (forward): K
+Rotor 2 forward: K -> H
+After Rotor 2 (forward): H
+Rotor 3 forward: H -> \
+After Rotor 3 (forward): \
+Rotor 4 forward: \ -> G
+After Rotor 4 (forward): G
+Rotor 5 forward: G -> N
+After Rotor 5 (forward): N
+Rotor 6 forward: N -> L
+After Rotor 6 (forward): L
+Rotor 7 forward: L -> [
+After Rotor 7 (forward): [
+Rotor 8 forward: [ -> G
+After Rotor 8 (forward): G
+Rotor 9 forward: G -> N
+After Rotor 9 (forward): N
+After Reflector: K
+Rotor 9 reverse: K -> ^
+After Rotor 9 (reverse): ^
+Rotor 8 reverse: ^ -> M
+After Rotor 8 (reverse): M
+Rotor 7 reverse: M -> K
+After Rotor 7 (reverse): K
+Rotor 6 reverse: K -> O
+After Rotor 6 (reverse): O
+Rotor 5 reverse: O -> I
+After Rotor 5 (reverse): I
+Rotor 4 reverse: I -> H
+After Rotor 4 (reverse): H
+Rotor 3 reverse: H -> C
+After Rotor 3 (reverse): C
+Rotor 2 reverse: C -> \
+After Rotor 2 (reverse): \
+Rotor 1 reverse: \ -> R
+After Rotor 1 (reverse): R
+Rotor 0 reverse: R -> W
+After Rotor 0 (reverse): W
+After Entry Disc: W
+Final Output: X
+Plaintext[6]: I -> Ciphertext[6]: X
+Original: A
+After Plugboard: B
+After Entry Disc: B
+Rotor 0 forward: B -> D
+After Rotor 0 (forward): D
+Rotor 1 forward: D -> B
+After Rotor 1 (forward): B
+Rotor 2 forward: B -> Y
+After Rotor 2 (forward): Y
+Rotor 3 forward: Y -> R
+After Rotor 3 (forward): R
+Rotor 4 forward: R -> C
+After Rotor 4 (forward): C
+Rotor 5 forward: C -> S
+After Rotor 5 (forward): S
+Rotor 6 forward: S -> Y
+After Rotor 6 (forward): Y
+Rotor 7 forward: Y -> E
+After Rotor 7 (forward): E
+Rotor 8 forward: E -> M
+After Rotor 8 (forward): M
+Rotor 9 forward: M -> B
+After Rotor 9 (forward): B
+After Reflector: T
+Rotor 9 reverse: T -> R
+After Rotor 9 (reverse): R
+Rotor 8 reverse: R -> A
+After Rotor 8 (reverse): A
+Rotor 7 reverse: A -> R
+After Rotor 7 (reverse): R
+Rotor 6 reverse: R -> [
+After Rotor 6 (reverse): [
+Rotor 5 reverse: [ -> P
+After Rotor 5 (reverse): P
+Rotor 4 reverse: P -> V
+After Rotor 4 (reverse): V
+Rotor 3 reverse: V -> E
+After Rotor 3 (reverse): E
+Rotor 2 reverse: E -> N
+After Rotor 2 (reverse): N
+Rotor 1 reverse: N -> A
+After Rotor 1 (reverse): A
+Rotor 0 reverse: A -> G
+After Rotor 0 (reverse): G
+After Entry Disc: G
+Final Output: H
+Plaintext[7]: A -> Ciphertext[7]: H
+Original: L
+After Plugboard: K
+After Entry Disc: K
+Rotor 0 forward: K -> [
+After Rotor 0 (forward): [
+Rotor 1 forward: [ -> ]
+After Rotor 1 (forward): ]
+Rotor 2 forward: ] -> N
+After Rotor 2 (forward): N
+Rotor 3 forward: N -> G
+After Rotor 3 (forward): G
+Rotor 4 forward: G -> R
+After Rotor 4 (forward): R
+Rotor 5 forward: R -> X
+After Rotor 5 (forward): X
+Rotor 6 forward: X -> P
+After Rotor 6 (forward): P
+Rotor 7 forward: P -> Y
+After Rotor 7 (forward): Y
+Rotor 8 forward: Y -> J
+After Rotor 8 (forward): J
+Rotor 9 forward: J -> W
+After Rotor 9 (forward): W
+After Reflector: O
+Rotor 9 reverse: O -> Z
+After Rotor 9 (reverse): Z
+Rotor 8 reverse: Z -> D
+After Rotor 8 (reverse): D
+Rotor 7 reverse: D -> W
+After Rotor 7 (reverse): W
+Rotor 6 reverse: W -> V
+After Rotor 6 (reverse): V
+Rotor 5 reverse: V -> E
+After Rotor 5 (reverse): E
+Rotor 4 reverse: E -> S
+After Rotor 4 (reverse): S
+Rotor 3 reverse: S -> [
+After Rotor 3 (reverse): [
+Rotor 2 reverse: [ -> U
+After Rotor 2 (reverse): U
+Rotor 1 reverse: U -> ^
+After Rotor 1 (reverse): ^
+Rotor 0 reverse: ^ -> X
+After Rotor 0 (reverse): X
+After Entry Disc: X
+Final Output: W
+Plaintext[8]: L -> Ciphertext[8]: W
+Original: K
+After Plugboard: L
+After Entry Disc: L
+Rotor 0 forward: L -> L
+After Rotor 0 (forward): L
+Rotor 1 forward: L -> R
+After Rotor 1 (forward): R
+Rotor 2 forward: R -> S
+After Rotor 2 (forward): S
+Rotor 3 forward: S -> Y
+After Rotor 3 (forward): Y
+Rotor 4 forward: Y -> X
+After Rotor 4 (forward): X
+Rotor 5 forward: X -> Z
+After Rotor 5 (forward): Z
+Rotor 6 forward: Z -> ^
+After Rotor 6 (forward): ^
+Rotor 7 forward: ^ -> X
+After Rotor 7 (forward): X
+Rotor 8 forward: X -> B
+After Rotor 8 (forward): B
+Rotor 9 forward: B -> F
+After Rotor 9 (forward): F
+After Reflector: D
+Rotor 9 reverse: D -> E
+After Rotor 9 (reverse): E
+Rotor 8 reverse: E -> Z
+After Rotor 8 (reverse): Z
+Rotor 7 reverse: Z -> [
+After Rotor 7 (reverse): [
+Rotor 6 reverse: [ -> G
+After Rotor 6 (reverse): G
+Rotor 5 reverse: G -> V
+After Rotor 5 (reverse): V
+Rotor 4 reverse: V -> X
+After Rotor 4 (reverse): X
+Rotor 3 reverse: X -> R
+After Rotor 3 (reverse): R
+Rotor 2 reverse: R -> D
+After Rotor 2 (reverse): D
+Rotor 1 reverse: D -> Y
+After Rotor 1 (reverse): Y
+Rotor 0 reverse: Y -> D
+After Rotor 0 (reverse): D
+After Entry Disc: D
+Final Output: C
+Plaintext[9]: K -> Ciphertext[9]: C
+Original: A
+After Plugboard: B
+After Entry Disc: B
+Rotor 0 forward: B -> D
+After Rotor 0 (forward): D
+Rotor 1 forward: D -> B
+After Rotor 1 (forward): B
+Rotor 2 forward: B -> Y
+After Rotor 2 (forward): Y
+Rotor 3 forward: Y -> R
+After Rotor 3 (forward): R
+Rotor 4 forward: R -> C
+After Rotor 4 (forward): C
+Rotor 5 forward: C -> S
+After Rotor 5 (forward): S
+Rotor 6 forward: S -> Y
+After Rotor 6 (forward): Y
+Rotor 7 forward: Y -> E
+After Rotor 7 (forward): E
+Rotor 8 forward: E -> M
+After Rotor 8 (forward): M
+Rotor 9 forward: M -> B
+After Rotor 9 (forward): B
+After Reflector: T
+Rotor 9 reverse: T -> R
+After Rotor 9 (reverse): R
+Rotor 8 reverse: R -> A
+After Rotor 8 (reverse): A
+Rotor 7 reverse: A -> R
+After Rotor 7 (reverse): R
+Rotor 6 reverse: R -> [
+After Rotor 6 (reverse): [
+Rotor 5 reverse: [ -> P
+After Rotor 5 (reverse): P
+Rotor 4 reverse: P -> V
+After Rotor 4 (reverse): V
+Rotor 3 reverse: V -> E
+After Rotor 3 (reverse): E
+Rotor 2 reverse: E -> N
+After Rotor 2 (reverse): N
+Rotor 1 reverse: N -> A
+After Rotor 1 (reverse): A
+Rotor 0 reverse: A -> G
+After Rotor 0 (reverse): G
+After Entry Disc: G
+Final Output: H
+Plaintext[10]: A -> Ciphertext[10]: H
+Fin du chiffrement.
+Début du déchiffrement :
+Original: A
+After Plugboard: B
+After Entry Disc: B
+Rotor 0 forward: B -> D
+After Rotor 0 (forward): D
+Rotor 1 forward: D -> B
+After Rotor 1 (forward): B
+Rotor 2 forward: B -> Y
+After Rotor 2 (forward): Y
+Rotor 3 forward: Y -> R
+After Rotor 3 (forward): R
+Rotor 4 forward: R -> C
+After Rotor 4 (forward): C
+Rotor 5 forward: C -> S
+After Rotor 5 (forward): S
+Rotor 6 forward: S -> Y
+After Rotor 6 (forward): Y
+Rotor 7 forward: Y -> E
+After Rotor 7 (forward): E
+Rotor 8 forward: E -> M
+After Rotor 8 (forward): M
+Rotor 9 forward: M -> B
+After Rotor 9 (forward): B
+After Reflector: T
+Rotor 9 reverse: T -> R
+After Rotor 9 (reverse): R
+Rotor 8 reverse: R -> A
+After Rotor 8 (reverse): A
+Rotor 7 reverse: A -> R
+After Rotor 7 (reverse): R
+Rotor 6 reverse: R -> [
+After Rotor 6 (reverse): [
+Rotor 5 reverse: [ -> P
+After Rotor 5 (reverse): P
+Rotor 4 reverse: P -> V
+After Rotor 4 (reverse): V
+Rotor 3 reverse: V -> E
+After Rotor 3 (reverse): E
+Rotor 2 reverse: E -> N
+After Rotor 2 (reverse): N
+Rotor 1 reverse: N -> A
+After Rotor 1 (reverse): A
+Rotor 0 reverse: A -> G
+After Rotor 0 (reverse): G
+After Entry Disc: G
+Final Output: H
+Erreur : ProcessByte n'est pas réversible pour A -> A -> H
+Ciphertext[0]: A -> Plaintext[0]: H
+Original: D
+After Plugboard: C
+After Entry Disc: C
+Rotor 0 forward: C -> P
+After Rotor 0 (forward): P
+Rotor 1 forward: P -> I
+After Rotor 1 (forward): I
+Rotor 2 forward: I -> J
+After Rotor 2 (forward): J
+Rotor 3 forward: J -> K
+After Rotor 3 (forward): K
+Rotor 4 forward: K -> Q
+After Rotor 4 (forward): Q
+Rotor 5 forward: Q -> B
+After Rotor 5 (forward): B
+Rotor 6 forward: B -> S
+After Rotor 6 (forward): S
+Rotor 7 forward: S -> \
+After Rotor 7 (forward): \
+Rotor 8 forward: \ -> U
+After Rotor 8 (forward): U
+Rotor 9 forward: U -> C
+After Rotor 9 (forward): C
+After Reflector: H
+Rotor 9 reverse: H -> \
+After Rotor 9 (reverse): \
+Rotor 8 reverse: \ -> I
+After Rotor 8 (reverse): I
+Rotor 7 reverse: I -> F
+After Rotor 7 (reverse): F
+Rotor 6 reverse: F -> P
+After Rotor 6 (reverse): P
+Rotor 5 reverse: P -> Y
+After Rotor 5 (reverse): Y
+Rotor 4 reverse: Y -> D
+After Rotor 4 (reverse): D
+Rotor 3 reverse: D -> X
+After Rotor 3 (reverse): X
+Rotor 2 reverse: X -> T
+After Rotor 2 (reverse): T
+Rotor 1 reverse: T -> O
+After Rotor 1 (reverse): O
+Rotor 0 reverse: O -> F
+After Rotor 0 (reverse): F
+After Entry Disc: F
+Final Output: E
+Erreur : ProcessByte n'est pas réversible pour D -> D -> E
+Ciphertext[1]: D -> Plaintext[1]: E
+Original: W
+After Plugboard: X
+After Entry Disc: X
+Rotor 0 forward: X -> ^
+After Rotor 0 (forward): ^
+Rotor 1 forward: ^ -> U
+After Rotor 1 (forward): U
+Rotor 2 forward: U -> [
+After Rotor 2 (forward): [
+Rotor 3 forward: [ -> S
+After Rotor 3 (forward): S
+Rotor 4 forward: S -> E
+After Rotor 4 (forward): E
+Rotor 5 forward: E -> V
+After Rotor 5 (forward): V
+Rotor 6 forward: V -> W
+After Rotor 6 (forward): W
+Rotor 7 forward: W -> D
+After Rotor 7 (forward): D
+Rotor 8 forward: D -> Z
+After Rotor 8 (forward): Z
+Rotor 9 forward: Z -> O
+After Rotor 9 (forward): O
+After Reflector: W
+Rotor 9 reverse: W -> J
+After Rotor 9 (reverse): J
+Rotor 8 reverse: J -> Y
+After Rotor 8 (reverse): Y
+Rotor 7 reverse: Y -> P
+After Rotor 7 (reverse): P
+Rotor 6 reverse: P -> X
+After Rotor 6 (reverse): X
+Rotor 5 reverse: X -> R
+After Rotor 5 (reverse): R
+Rotor 4 reverse: R -> G
+After Rotor 4 (reverse): G
+Rotor 3 reverse: G -> N
+After Rotor 3 (reverse): N
+Rotor 2 reverse: N -> ]
+After Rotor 2 (reverse): ]
+Rotor 1 reverse: ] -> [
+After Rotor 1 (reverse): [
+Rotor 0 reverse: [ -> K
+After Rotor 0 (reverse): K
+After Entry Disc: K
+Final Output: L
+Erreur : ProcessByte n'est pas réversible pour W -> W -> L
+Ciphertext[2]: W -> Plaintext[2]: L
+Original: W
+After Plugboard: X
+After Entry Disc: X
+Rotor 0 forward: X -> ^
+After Rotor 0 (forward): ^
+Rotor 1 forward: ^ -> U
+After Rotor 1 (forward): U
+Rotor 2 forward: U -> [
+After Rotor 2 (forward): [
+Rotor 3 forward: [ -> S
+After Rotor 3 (forward): S
+Rotor 4 forward: S -> E
+After Rotor 4 (forward): E
+Rotor 5 forward: E -> V
+After Rotor 5 (forward): V
+Rotor 6 forward: V -> W
+After Rotor 6 (forward): W
+Rotor 7 forward: W -> D
+After Rotor 7 (forward): D
+Rotor 8 forward: D -> Z
+After Rotor 8 (forward): Z
+Rotor 9 forward: Z -> O
+After Rotor 9 (forward): O
+After Reflector: W
+Rotor 9 reverse: W -> J
+After Rotor 9 (reverse): J
+Rotor 8 reverse: J -> Y
+After Rotor 8 (reverse): Y
+Rotor 7 reverse: Y -> P
+After Rotor 7 (reverse): P
+Rotor 6 reverse: P -> X
+After Rotor 6 (reverse): X
+Rotor 5 reverse: X -> R
+After Rotor 5 (reverse): R
+Rotor 4 reverse: R -> G
+After Rotor 4 (reverse): G
+Rotor 3 reverse: G -> N
+After Rotor 3 (reverse): N
+Rotor 2 reverse: N -> ]
+After Rotor 2 (reverse): ]
+Rotor 1 reverse: ] -> [
+After Rotor 1 (reverse): [
+Rotor 0 reverse: [ -> K
+After Rotor 0 (reverse): K
+After Entry Disc: K
+Final Output: L
+Erreur : ProcessByte n'est pas réversible pour W -> W -> L
+Ciphertext[3]: W -> Plaintext[3]: L
+Original: F
+After Plugboard: E
+After Entry Disc: E
+Rotor 0 forward: E -> V
+After Rotor 0 (forward): V
+Rotor 1 forward: V -> W
+After Rotor 1 (forward): W
+Rotor 2 forward: W -> F
+After Rotor 2 (forward): F
+Rotor 3 forward: F -> N
+After Rotor 3 (forward): N
+Rotor 4 forward: N -> T
+After Rotor 4 (forward): T
+Rotor 5 forward: T -> A
+After Rotor 5 (forward): A
+Rotor 6 forward: A -> V
+After Rotor 6 (forward): V
+Rotor 7 forward: V -> W
+After Rotor 7 (forward): W
+Rotor 8 forward: W -> O
+After Rotor 8 (forward): O
+Rotor 9 forward: O -> \
+After Rotor 9 (forward): \
+After Reflector: X
+Rotor 9 reverse: X -> S
+After Rotor 9 (reverse): S
+Rotor 8 reverse: S -> R
+After Rotor 8 (reverse): R
+Rotor 7 reverse: R -> \
+After Rotor 7 (reverse): \
+Rotor 6 reverse: \ -> \
+After Rotor 6 (reverse): \
+Rotor 5 reverse: \ -> [
+After Rotor 5 (reverse): [
+Rotor 4 reverse: [ -> Q
+After Rotor 4 (reverse): Q
+Rotor 3 reverse: Q -> T
+After Rotor 3 (reverse): T
+Rotor 2 reverse: T -> L
+After Rotor 2 (reverse): L
+Rotor 1 reverse: L -> K
+After Rotor 1 (reverse): K
+Rotor 0 reverse: K -> P
+After Rotor 0 (reverse): P
+After Entry Disc: P
+Final Output: O
+Erreur : ProcessByte n'est pas réversible pour F -> F -> O
+Ciphertext[4]: F -> Plaintext[4]: O
+Original: O
+After Plugboard: P
+After Entry Disc: P
+Rotor 0 forward: P -> K
+After Rotor 0 (forward): K
+Rotor 1 forward: K -> L
+After Rotor 1 (forward): L
+Rotor 2 forward: L -> T
+After Rotor 2 (forward): T
+Rotor 3 forward: T -> Q
+After Rotor 3 (forward): Q
+Rotor 4 forward: Q -> [
+After Rotor 4 (forward): [
+Rotor 5 forward: [ -> \
+After Rotor 5 (forward): \
+Rotor 6 forward: \ -> \
+After Rotor 6 (forward): \
+Rotor 7 forward: \ -> R
+After Rotor 7 (forward): R
+Rotor 8 forward: R -> S
+After Rotor 8 (forward): S
+Rotor 9 forward: S -> X
+After Rotor 9 (forward): X
+After Reflector: \
+Rotor 9 reverse: \ -> O
+After Rotor 9 (reverse): O
+Rotor 8 reverse: O -> W
+After Rotor 8 (reverse): W
+Rotor 7 reverse: W -> V
+After Rotor 7 (reverse): V
+Rotor 6 reverse: V -> A
+After Rotor 6 (reverse): A
+Rotor 5 reverse: A -> T
+After Rotor 5 (reverse): T
+Rotor 4 reverse: T -> N
+After Rotor 4 (reverse): N
+Rotor 3 reverse: N -> F
+After Rotor 3 (reverse): F
+Rotor 2 reverse: F -> W
+After Rotor 2 (reverse): W
+Rotor 1 reverse: W -> V
+After Rotor 1 (reverse): V
+Rotor 0 reverse: V -> E
+After Rotor 0 (reverse): E
+After Entry Disc: E
+Final Output: F
+Erreur : ProcessByte n'est pas réversible pour O -> O -> F
+Ciphertext[5]: O -> Plaintext[5]: F
+Original: X
+After Plugboard: W
+After Entry Disc: W
+Rotor 0 forward: W -> R
+After Rotor 0 (forward): R
+Rotor 1 forward: R -> \
+After Rotor 1 (forward): \
+Rotor 2 forward: \ -> C
+After Rotor 2 (forward): C
+Rotor 3 forward: C -> H
+After Rotor 3 (forward): H
+Rotor 4 forward: H -> I
+After Rotor 4 (forward): I
+Rotor 5 forward: I -> O
+After Rotor 5 (forward): O
+Rotor 6 forward: O -> K
+After Rotor 6 (forward): K
+Rotor 7 forward: K -> M
+After Rotor 7 (forward): M
+Rotor 8 forward: M -> ^
+After Rotor 8 (forward): ^
+Rotor 9 forward: ^ -> K
+After Rotor 9 (forward): K
+After Reflector: N
+Rotor 9 reverse: N -> G
+After Rotor 9 (reverse): G
+Rotor 8 reverse: G -> [
+After Rotor 8 (reverse): [
+Rotor 7 reverse: [ -> L
+After Rotor 7 (reverse): L
+Rotor 6 reverse: L -> N
+After Rotor 6 (reverse): N
+Rotor 5 reverse: N -> G
+After Rotor 5 (reverse): G
+Rotor 4 reverse: G -> \
+After Rotor 4 (reverse): \
+Rotor 3 reverse: \ -> H
+After Rotor 3 (reverse): H
+Rotor 2 reverse: H -> K
+After Rotor 2 (reverse): K
+Rotor 1 reverse: K -> \
+After Rotor 1 (reverse): \
+Rotor 0 reverse: \ -> J
+After Rotor 0 (reverse): J
+After Entry Disc: J
+Final Output: I
+Erreur : ProcessByte n'est pas réversible pour X -> X -> I
+Ciphertext[6]: X -> Plaintext[6]: I
+Original: H
+After Plugboard: G
+After Entry Disc: G
+Rotor 0 forward: G -> A
+After Rotor 0 (forward): A
+Rotor 1 forward: A -> N
+After Rotor 1 (forward): N
+Rotor 2 forward: N -> E
+After Rotor 2 (forward): E
+Rotor 3 forward: E -> V
+After Rotor 3 (forward): V
+Rotor 4 forward: V -> P
+After Rotor 4 (forward): P
+Rotor 5 forward: P -> [
+After Rotor 5 (forward): [
+Rotor 6 forward: [ -> R
+After Rotor 6 (forward): R
+Rotor 7 forward: R -> A
+After Rotor 7 (forward): A
+Rotor 8 forward: A -> R
+After Rotor 8 (forward): R
+Rotor 9 forward: R -> T
+After Rotor 9 (forward): T
+After Reflector: B
+Rotor 9 reverse: B -> M
+After Rotor 9 (reverse): M
+Rotor 8 reverse: M -> E
+After Rotor 8 (reverse): E
+Rotor 7 reverse: E -> Y
+After Rotor 7 (reverse): Y
+Rotor 6 reverse: Y -> S
+After Rotor 6 (reverse): S
+Rotor 5 reverse: S -> C
+After Rotor 5 (reverse): C
+Rotor 4 reverse: C -> R
+After Rotor 4 (reverse): R
+Rotor 3 reverse: R -> Y
+After Rotor 3 (reverse): Y
+Rotor 2 reverse: Y -> B
+After Rotor 2 (reverse): B
+Rotor 1 reverse: B -> D
+After Rotor 1 (reverse): D
+Rotor 0 reverse: D -> B
+After Rotor 0 (reverse): B
+After Entry Disc: B
+Final Output: A
+Erreur : ProcessByte n'est pas réversible pour H -> H -> A
+Ciphertext[7]: H -> Plaintext[7]: A
+Original: W
+After Plugboard: X
+After Entry Disc: X
+Rotor 0 forward: X -> ^
+After Rotor 0 (forward): ^
+Rotor 1 forward: ^ -> U
+After Rotor 1 (forward): U
+Rotor 2 forward: U -> [
+After Rotor 2 (forward): [
+Rotor 3 forward: [ -> S
+After Rotor 3 (forward): S
+Rotor 4 forward: S -> E
+After Rotor 4 (forward): E
+Rotor 5 forward: E -> V
+After Rotor 5 (forward): V
+Rotor 6 forward: V -> W
+After Rotor 6 (forward): W
+Rotor 7 forward: W -> D
+After Rotor 7 (forward): D
+Rotor 8 forward: D -> Z
+After Rotor 8 (forward): Z
+Rotor 9 forward: Z -> O
+After Rotor 9 (forward): O
+After Reflector: W
+Rotor 9 reverse: W -> J
+After Rotor 9 (reverse): J
+Rotor 8 reverse: J -> Y
+After Rotor 8 (reverse): Y
+Rotor 7 reverse: Y -> P
+After Rotor 7 (reverse): P
+Rotor 6 reverse: P -> X
+After Rotor 6 (reverse): X
+Rotor 5 reverse: X -> R
+After Rotor 5 (reverse): R
+Rotor 4 reverse: R -> G
+After Rotor 4 (reverse): G
+Rotor 3 reverse: G -> N
+After Rotor 3 (reverse): N
+Rotor 2 reverse: N -> ]
+After Rotor 2 (reverse): ]
+Rotor 1 reverse: ] -> [
+After Rotor 1 (reverse): [
+Rotor 0 reverse: [ -> K
+After Rotor 0 (reverse): K
+After Entry Disc: K
+Final Output: L
+Erreur : ProcessByte n'est pas réversible pour W -> W -> L
+Ciphertext[8]: W -> Plaintext[8]: L
+Original: C
+After Plugboard: D
+After Entry Disc: D
+Rotor 0 forward: D -> Y
+After Rotor 0 (forward): Y
+Rotor 1 forward: Y -> D
+After Rotor 1 (forward): D
+Rotor 2 forward: D -> R
+After Rotor 2 (forward): R
+Rotor 3 forward: R -> X
+After Rotor 3 (forward): X
+Rotor 4 forward: X -> V
+After Rotor 4 (forward): V
+Rotor 5 forward: V -> G
+After Rotor 5 (forward): G
+Rotor 6 forward: G -> [
+After Rotor 6 (forward): [
+Rotor 7 forward: [ -> Z
+After Rotor 7 (forward): Z
+Rotor 8 forward: Z -> E
+After Rotor 8 (forward): E
+Rotor 9 forward: E -> D
+After Rotor 9 (forward): D
+After Reflector: F
+Rotor 9 reverse: F -> B
+After Rotor 9 (reverse): B
+Rotor 8 reverse: B -> X
+After Rotor 8 (reverse): X
+Rotor 7 reverse: X -> ^
+After Rotor 7 (reverse): ^
+Rotor 6 reverse: ^ -> Z
+After Rotor 6 (reverse): Z
+Rotor 5 reverse: Z -> X
+After Rotor 5 (reverse): X
+Rotor 4 reverse: X -> Y
+After Rotor 4 (reverse): Y
+Rotor 3 reverse: Y -> S
+After Rotor 3 (reverse): S
+Rotor 2 reverse: S -> R
+After Rotor 2 (reverse): R
+Rotor 1 reverse: R -> L
+After Rotor 1 (reverse): L
+Rotor 0 reverse: L -> L
+After Rotor 0 (reverse): L
+After Entry Disc: L
+Final Output: K
+Erreur : ProcessByte n'est pas réversible pour C -> C -> K
+Ciphertext[9]: C -> Plaintext[9]: K
+Original: H
+After Plugboard: G
+After Entry Disc: G
+Rotor 0 forward: G -> A
+After Rotor 0 (forward): A
+Rotor 1 forward: A -> N
+After Rotor 1 (forward): N
+Rotor 2 forward: N -> E
+After Rotor 2 (forward): E
+Rotor 3 forward: E -> V
+After Rotor 3 (forward): V
+Rotor 4 forward: V -> P
+After Rotor 4 (forward): P
+Rotor 5 forward: P -> [
+After Rotor 5 (forward): [
+Rotor 6 forward: [ -> R
+After Rotor 6 (forward): R
+Rotor 7 forward: R -> A
+After Rotor 7 (forward): A
+Rotor 8 forward: A -> R
+After Rotor 8 (forward): R
+Rotor 9 forward: R -> T
+After Rotor 9 (forward): T
+After Reflector: B
+Rotor 9 reverse: B -> M
+After Rotor 9 (reverse): M
+Rotor 8 reverse: M -> E
+After Rotor 8 (reverse): E
+Rotor 7 reverse: E -> Y
+After Rotor 7 (reverse): Y
+Rotor 6 reverse: Y -> S
+After Rotor 6 (reverse): S
+Rotor 5 reverse: S -> C
+After Rotor 5 (reverse): C
+Rotor 4 reverse: C -> R
+After Rotor 4 (reverse): R
+Rotor 3 reverse: R -> Y
+After Rotor 3 (reverse): Y
+Rotor 2 reverse: Y -> B
+After Rotor 2 (reverse): B
+Rotor 1 reverse: B -> D
+After Rotor 1 (reverse): D
+Rotor 0 reverse: D -> B
+After Rotor 0 (reverse): B
+After Entry Disc: B
+Final Output: A
+Erreur : ProcessByte n'est pas réversible pour H -> H -> A
+Ciphertext[10]: H -> Plaintext[10]: A
+Fin du déchiffrement.
