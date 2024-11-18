@@ -125,7 +125,7 @@ Le code implémente la simulation de la machine Fialka en suivant les principes 
 3. Compilez le programme :
    ```bash
    gcc -o fi fi.c
-   ```bash
+   ```
 
 4. Exécutez le programme :
    ```bash
