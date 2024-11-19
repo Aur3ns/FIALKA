@@ -23,8 +23,7 @@
 6. [Structure du Code](#structure-du-code)
 7. [Installation et Configuration](#installation-et-configuration)
 8. [Utilisation du Programme](#utilisation-du-programme)
-9. [Fichiers Créés Par Défaut en Cas de Non-Détection](#Fichiers-Créés-Par-Défaut-en-Cas-de-Non-Détection)
-
+9. [Fichiers créés par défaut en cas de non-détection](#fichiers-créés-par-défaut-en-cas-de-non-détection)
 
 ---
 
@@ -32,7 +31,25 @@
 
 Le projet **Fialka** simule le fonctionnement d'une machine de chiffrement complexe utilisée par l'Union Soviétique pendant la guerre froide. Conçue pour sécuriser les communications sensibles, cette machine à rotors utilise des principes cryptographiques similaires à ceux de la machine **Enigma**, mais avec des caractéristiques plus avancées et complexes, telles que des configurations dynamiques des rotors et un système de **plugboard** pour les substitutions de caractères.
 
-Le but du projet est de fournir une compréhension de cette machine en implémentant ses mécanismes de chiffrement et de déchiffrement dans un programme moderne. Ce simulateur permet à l'utilisateur de configurer la machine, de chiffrer et déchiffrer des messages, et de visualiser l'état de la machine.
+Le but du projet est de fournir une compréhension de cette machine en implémentant ses mécanismes de chiffrement et de déchiffrement dans un programme moderne. Ce simulateur permet à l'utilisateur de configurer la machine, de chiffrer et déchiffrer des messages, et de visualiser l'état de la machine. 
+
+Je me suis inspiré de ces fichiers pour pouvoir tenter de créer un réplique de la vraie machine :
+
+| https://www.cryptomuseum.com/pub/files/Fialka_200.pdf                                        |
+|----------------------------------------------------------------------------------------------|
+| FIALKA M-125, Detailed description of the Russian Fialka cipher machines, by Paul Reuvers & Marc Simons                                                                                                                            
+
+| https://www.slate.fr/story/178587/fialka-machine-cryptage-services-secrets-sovietiques-secret|
+|----------------------------------------------------------------------------------------------|
+| L'histoire cachée de la Fialka, machine à chiffrer du KGB                                    |
+
+| https://enigmamuseum.com/mfman.pdf                                                           |
+|----------------------------------------------------------------------------------------------|
+| RUSSIAN FIALKA M-125, Cipher Machine Manual, (German Language Version), 1978                 |
+
+| https://mysterytwister.org/media/challenges/pdf/mtc3-madness-06-fialka-01-en.pdf             |                                      
+|----------------------------------------------------------------------------------------------|
+|                The Fialka Challenge by madness                                               |
 
 ## Objectifs du Projet
 
@@ -52,7 +69,7 @@ Le but du projet est de fournir une compréhension de cette machine en implémen
 
 ### Origines et Contexte Historique
 
-Le M-125, nom de code **Fialka (russe : ФИАЛКА)**, était une machine de chiffrement électromécanique à roue, développée en URSS peu après la Seconde Guerre mondiale. Introduit pour la première fois en 1956, elle est rapidement devenu une des machines préférées du Pacte de Varsovie et de certains pays alliés, comme Cuba. Cette machine est similaire au SIGABA américain, au KL-7, et, dans une moindre mesure, à l’Enigma, raison pour laquelle elle est parfois surnommée "l’Enigma russe".
+Le M-125, nom de code **Fialka (russe : ФИАЛКА)**, était une machine de chiffrement électromécanique à roue, développée en URSS peu après la Seconde Guerre mondiale. Introduit pour la première fois en 1956, elle remplaça l'Albatross, une machine de chiffrement soviétique qui était elle-même plus complexe que l'Enigma. elle est rapidement devenu une des machines préférées du Pacte de Varsovie et de certains pays alliés, comme Cuba. Pourtant, l'existence de la Fialka demeura des plus secrètes. La Russie ne déclassifia pas l'information à propos de cette machine avant 2005. Les méthodes de chiffrement de la Fialka étaient avancées, mais la technologie de base était ancienne. À l'instar de l'Enigma, c'était une machine de chiffrement électromécanique fonctionnant avec des rouleaux. Son clavier ressemblait à celui d'une machine à écrire, mais son corps avait plus l'aspect d'une machine à calculer très perfectionnée, équipée d'une série de rotors qui remplaçaient toute lettre par une autre à mesure que le message était tapé. Essentiellement utilisée par les militaires, la Fialka était un secret si jalousement gardé que la soldatesque formée pour l'utiliser aurait été obligée de signer des contrats spéciaux précisant que ses membres ne devaient pas voyager à l'étranger pendant deux ans !
 
 La machine a **10 rotors de chiffrement**, chacun avec **30 contacts de chaque côté**. Les rotors adjacents se déplacent dans des directions opposées. De plus, la machine dispose d’un lecteur de carte dans lequel une nouvelle carte-clé perforée était installée quotidiennement, ainsi qu'une imprimante, un lecteur de bande et un perforateur de bande.
 
@@ -61,7 +78,7 @@ Chaque pays du Pacte de Varsovie disposait de sa propre version personnalisée d
 
 ### Comparaison avec la Machine Enigma
 
-La machine **Enigma** a été utilisée par l'Allemagne nazie pendant la Seconde Guerre mondiale et repose sur un mécanisme de **rotors** pour permuter les lettres de l'alphabet. Bien que l'Enigma ait été brisée par les Alliés pendant la guerre, elle était à l'époque considérée comme inviolable.
+La machine **Enigma** a été utilisée par l'Allemagne nazie pendant la Seconde Guerre mondiale et repose sur un mécanisme de **rotors** pour permuter les lettres de l'alphabet. Bien que l'Enigma ait été brisée par les Alliés pendant la guerre, elle était à l'époque considérée comme inviolable. La Fialka comblait les lacunes de l'Enigma: comme elle fonctionnait avec dix rouleaux de lettres, contre trois ou quatre pour l'Enigma, le chiffrement sur la machine russe était mieux sécurisé. Chaque rotation des rouleaux permettait à la Fialka de chiffrer chaque lettre individuellement. La machine pouvait produire plus de 500 billions de codes. Selon l'auteur de Code Warriors, Stephen Budiansky, qui s'est intéressé aux travaux de la National Security Agency (NSA) pour déchiffrer les codes secrets soviétiques, le chiffrement était si perfectionné qu'il n'aurait pu être découvert que par erreur humaine, par vol ou par trahison. Les avancées importantes que les États-Unis et l'URSS ont faites, tout au long de la guerre froide, dans le déchiffrement des codes secrets de leur ennemi ont été obtenues soit par des moyens “directs” (comme le vol de listes clés de combinaisons) ou à cause d'erreurs dans les procédures ayant éventé des détails essentiels sur les schémas de chiffrement internes du système de chiffrement.»
 
 La machine Fialka, tout comme l'Enigma, utilise des **rotors** pour permuter les lettres, mais elle offre plusieurs améliorations :
 - Un **plugboard** (ou tableau de connexions) qui permet d'effectuer des substitutions de lettres avant même qu'elles ne passent par les rotors.
@@ -149,9 +166,10 @@ Voici les fichiers générés par défaut :
 
 ### 1. **`input.tape` (Bande perforée d'entrée par défaut)**
 
-Si le fichier **`input.tape`** n'est pas trouvé, le programme crée une bande perforée d'entrée avec un texte par défaut. Ce texte est codé en **5 bits** pour être compatible avec le système de la machine Fialka. Le texte par défaut utilisé est :  
-**`HELLOFIALKA`**  
-Ce texte est ensuite converti en indices correspondant à chaque lettre (de A à Z) pour être traité par la machine. La bande perforée est utilisée pour simuler le processus de chiffrement et de déchiffrement.
+- Si le fichier **`input.tape`** n'est pas trouvé, le programme crée une bande perforée d'entrée avec un texte par défaut. Ce texte     est codé en **5 bits** pour être compatible avec le système de la machine Fialka. Le texte par défaut utilisé est :  
+  **`HELLOFIALKA`**  
+- Ce texte est ensuite converti en indices correspondant à chaque lettre (de A à Z) pour être traité par la machine. La bande 
+  perforée est utilisée pour simuler le processus de chiffrement et de déchiffrement.
 
 Exemple du fichier `input.tape` créé :
 ```yaml
@@ -161,8 +179,10 @@ HELLOFIALKA
 
 ### 2. **`output.tape` (Résultats du chiffrement et déchiffrement)**
 
-Le fichier **`output.tape`** est automatiquement créé après que le programme ait effectué les opérations de chiffrement et de déchiffrement. Il contient les résultats de ces opérations, ainsi que les textes avant et après chiffrement et déchiffrement.  
-Le fichier est sauvegardé au format texte, et chaque lettre est représentée par un caractère correspondant à son index dans l'alphabet Fialka (de 0 à 29 pour l'alphabet étendu de la machine).
+- Le fichier **`output.tape`** est automatiquement créé après que le programme ait effectué les opérations de chiffrement et de 
+  déchiffrement. Il contient les résultats de ces opérations, ainsi que les textes avant et après chiffrement et déchiffrement.  
+- Le fichier est sauvegardé au format texte, et chaque lettre est représentée par un caractère correspondant à son index dans 
+  l'alphabet Fialka (de 0 à 29 pour l'alphabet étendu de la machine).
 
 Exemple du fichier `output.tape` créé après un chiffrement et déchiffrement :
 
@@ -215,4 +235,5 @@ Cela vous assure que le programme est **autonome** dans sa capacité à fonction
 - **`logfile.log`** : Contient les logs détaillés de toutes les étapes effectuées pendant le chiffrement.
 - **Clés de chiffrement (`daily_key.txt`, `message_key.txt`)** : Fournissent des clés de chiffrement générées automatiquement si elles ne sont pas présentes.
 
-Cela permet d'offrir une expérience utilisateur simplifiée et garantit que la machine Fialka peut être utilisée immédiatement, même sans configuration préalable.
+Cela permet d'offrir une expérience utilisateur simplifiée et garantit que la machine Fialka peut être utilisée immédiatement, 
+même sans configuration préalable.
