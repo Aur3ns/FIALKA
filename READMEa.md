@@ -166,23 +166,20 @@ The overall encryption process consists of several steps:
    ```bash
    gcc -o fi fi.c
    ```
-4. Run the program :
+3. Tapez ce que vous souhaitez chiffrer dans le fichier *input.tape*
+4. Configurez les clés et le plugboard a votre guise
+
+5. Compile the program :
    ```bash
-   python int.py
+   gcc -o fi fi.c
+   ```
+
+6. Compile the program :
+   ```bash
+   ./fi
    ```
 
 🚨NOTE: The fialka.c file is an implementation from the Slovak University of Technology's Institute of Informatics and Mathematics. This implementation is not functional, but the original article source is available in the links above.
-
-
-
-## Using the Program
-Users can navigate through various menus:
-
- - **Encrypt Text** : Encrypts a message using the machine.
- - **Decrypt Text** : Decrypts a message using the machine.
- - **Configure the Machine** : Modifies machine parameters (rotors, plugboard, reflector).
- - **View Machine State** : Displays the current state of the machine, including rotor positions and configurations.
- - **Exit** : Closes the program.
 
 
 ## Default Files Created When Not Detected
