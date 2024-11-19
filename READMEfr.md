@@ -139,6 +139,8 @@ La machine Fialka repose sur un système complexe de **rotors**, chacun capable 
    ```bash
    cd FIALKA
    ```
+3. Tapez ce que vous souhaitez chiffrer dans le fichier *input.tape*
+4. Configurez les clés et le plugboard a votre guise
 
 3. Compilez le programme :
    ```bash
@@ -147,19 +149,10 @@ La machine Fialka repose sur un système complexe de **rotors**, chacun capable 
 
 4. Exécutez le programme :
    ```bash
-   python int.py
+   ./fi
    ```
 🚨ATTENTION : le fichier fialka.c est l'implémentation de l'institut d'informatique et de Mathématiques de l'Université de Technologie de Slovaquie. Cette implémentation ne fonctionne pas, mais l'article source est disponible dans les liens plus haut.
    
-## Utilisation du Programme
-L'utilisateur peut naviguer à travers différents menus :
-
-- **Chiffrer un texte** : Chiffre un message en utilisant la machine.
-- **Déchiffrer un texte** : Déchiffre un message en utilisant la machine.
-- **Configurer la machine** : Modifie les paramètres de la machine (rotors, plugboard, réflecteur).
-- **État actuel de la machine** : Affiche l'état actuel de la machine, y compris les positions des rotors et les configurations.
-- **Quitter** : Ferme le programme.
-
 ## Fichiers Créés Par Défaut en Cas de Non-Détection
 
 Dans le cas où certains fichiers nécessaires ne sont pas trouvés dans le répertoire de travail, le programme **génère automatiquement** des fichiers par défaut pour garantir que les opérations puissent toujours être effectuées. Cela permet de s'assurer que l'utilisateur peut tester la machine même s'il manque des fichiers de configuration.
