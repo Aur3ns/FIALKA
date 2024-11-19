@@ -94,33 +94,33 @@ La machine Fialka repose sur un système complexe de **rotors**, chacun capable 
 
 ### Les Rotors et leur Fonctionnement Mathématique
 
-Les **rotors** de la Fialka effectuent des **permutations** sur les lettres du message. Chaque rotor possède une table de permutation qui spécifie comment chaque lettre de l'alphabet doit être substituée. Lorsque le signal passe à travers un rotor, il est modifié en fonction de la permutation correspondante. Le rotor tourne après chaque lettre traitée, ce qui modifie la permutation et rend le chiffrement plus difficile à déchiffrer sans connaître la configuration exacte de la machine.
+ - Les **rotors** de la Fialka effectuent des **permutations** sur les lettres du message. Chaque rotor possède une table de permutation qui spécifie comment chaque lettre     de l'alphabet doit être substituée. Lorsque le signal passe à travers un rotor, il est modifié en fonction de la permutation correspondante. Le rotor tourne après chaque     lettre traitée, ce qui modifie la permutation et rend le chiffrement plus difficile à déchiffrer sans connaître la configuration exacte de la machine.
 
 ### La Substitution et le Plugboard
 
-Le **plugboard** fonctionne comme un mécanisme de substitution avant même que le signal n'entre dans les rotors. Il permet d'échanger certaines lettres de l'alphabet selon une configuration spécifiée. Cela ajoute une couche de sécurité supplémentaire, car même si un rotor est connu, la substitution effectuée par le plugboard rend l'attaque plus complexe.
+ - Le **plugboard** fonctionne comme un mécanisme de substitution avant même que le signal n'entre dans les rotors. Il permet d'échanger certaines lettres de l'alphabet        selon une configuration spécifiée. Cela ajoute une couche de sécurité supplémentaire, car même si un rotor est connu, la substitution effectuée par le plugboard rend        l'attaque plus complexe.
 
 ### Le Réflecteur et les Permutations
 
-Le **réflecteur** est une pièce clé de la machine Fialka. Après que le signal ait traversé les rotors, il est redirigé par le réflecteur vers les rotors dans l'autre direction. Ce mécanisme crée une boucle et renforce la sécurité en augmentant le nombre de transformations qu'un caractère subit. Les réflecteurs sont configurables et peuvent être choisis en fonction de la situation.
+ - Le **réflecteur** est une pièce clé de la machine Fialka. Après que le signal ait traversé les rotors, il est redirigé par le réflecteur vers les rotors dans l'autre         direction. Ce mécanisme crée une boucle et renforce la sécurité en augmentant le nombre de transformations qu'un caractère subit. Les réflecteurs sont configurables et     peuvent être choisis en fonction de la situation.
 
 ### La Sécurité et Réversibilité des Rotors
 
-L'un des aspects les plus intéressants du fonctionnement des rotors dans la Fialka est la **réversibilité** du chiffrement. Les rotors sont conçus de manière à ce que chaque permutation puisse être inversée, ce qui permet au même mécanisme de réaliser à la fois le chiffrement et le déchiffrement. Cela signifie qu'une fois le message chiffré, on peut le déchiffrer en appliquant la même série de transformations mais dans l'ordre inverse.
+ - L'un des aspects les plus intéressants du fonctionnement des rotors dans la Fialka est la **réversibilité** du chiffrement. Les rotors sont conçus de manière à ce que         chaque permutation puisse être inversée, ce qui permet au même mécanisme de réaliser à la fois le chiffrement et le déchiffrement. Cela signifie qu'une fois le message     chiffré, on peut le déchiffrer en appliquant la même série de transformations mais dans l'ordre inverse.
 
 ### L'Algorithme de Chiffrement Global
 
-Le processus global de chiffrement repose sur plusieurs étapes :
-1. Le signal passe d'abord par le **plugboard** pour une substitution initiale.
-2. Ensuite, il traverse les **rotors**, qui modifient sa valeur en fonction de leur position et de leur permutation.
-3. Le signal est ensuite renvoyé par le **réflecteur**, ce qui augmente la complexité de la transformation.
-4. Enfin, le signal traverse les rotors dans l'autre direction avant de sortir du système.
+ - Le processus global de chiffrement repose sur plusieurs étapes :
+    1. Le signal passe d'abord par le **plugboard** pour une substitution initiale.
+    2. Ensuite, il traverse les **rotors**, qui modifient sa valeur en fonction de leur position et de leur permutation.
+    3. Le signal est ensuite renvoyé par le **réflecteur**, ce qui augmente la complexité de la transformation.
+    4. Enfin, le signal traverse les rotors dans l'autre direction avant de sortir du système.
 
-Le chiffrement est ainsi basé sur un enchaînement de transformations permutatives qui rendent le processus extrêmement difficile à casser sans la clé exacte.
+ - Le chiffrement est ainsi basé sur un enchaînement de transformations permutatives qui rendent le processus extrêmement difficile à casser sans la clé exacte.
 
 ## Structure du Code
 
-Le code implémente la simulation de la machine Fialka en suivant les principes cryptographiques décrits ci-dessus. Il utilise des tables de permutations pour les rotors, gère le mécanisme du plugboard et du réflecteur, et permet à l'utilisateur de configurer la machine selon ses besoins. Le programme simule également le pas des rotors et permet de chiffrer et déchiffrer des messages en utilisant une clé spécifique.
+ - Le code implémente la simulation de la machine Fialka en suivant les principes cryptographiques décrits ci-dessus. Il utilise des tables de permutations pour les rotors,     gère le mécanisme du plugboard et du réflecteur, et permet à l'utilisateur de configurer la machine selon ses besoins. Le programme simule également le pas des rotors         et permet de chiffrer et déchiffrer des messages en utilisant une clé spécifique.
 
 # Installation et Configuration
 
@@ -149,7 +149,7 @@ Le code implémente la simulation de la machine Fialka en suivant les principes 
    ```bash
    python int.py
    ```
-🚨ATTENTION : le fichier fialka.c est l'implémentation de l'institut d'informatique et de math de l'université de technologie de Slovaquie. Cette implémentation ne fonctionne pas, mais l'article source est disponible dans les liens plus haut.
+🚨ATTENTION : le fichier fialka.c est l'implémentation de l'institut d'informatique et de Mathématiques de l'Université de Technologie de Slovaquie. Cette implémentation ne fonctionne pas, mais l'article source est disponible dans les liens plus haut.
    
 ## Utilisation du Programme
 L'utilisateur peut naviguer à travers différents menus :
