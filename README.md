@@ -182,7 +182,7 @@ The overall encryption process consists of several steps:
    ./fi
    ```
 
-🚨NOTE: The fialka.c file is an implementation from the Slovak University of Technology's Institute of Informatics and Mathematics. This implementation is not functional, but the original article source is available in the links above.
+🚨NOTE: The *fialka.c* file is an implementation from the Slovak University of Technology's Institute of Informatics and Mathematics. This implementation is not functional, but the original article source is available in the links above.
 
 
 ## Default Files Created When Not Detected
