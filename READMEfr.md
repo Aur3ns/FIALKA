@@ -212,7 +212,6 @@ Chaque ligne contient les informations suivantes pour chaque rotor :
 
 Ces fichiers permettent de configurer la machine et de lancer des processus de chiffrement/déchiffrement sans dépendre de fichiers externes manquants.
 
----
 
 ## Pourquoi ces fichiers sont générés ?
 
