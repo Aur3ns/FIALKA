@@ -10,11 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      # Met à jour vers la dernière version de checkout
+      - uses: actions/checkout@v3
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        # Utilise une version plus récente de setup-node
+        uses: actions/setup-node@v3
         with:
-          node-version: 12.x
+          node-version: 20.x
       # Traduction en anglais
       - name: Adding README - English
         uses: dephraiim/translate-readme@main
