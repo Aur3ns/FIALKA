@@ -167,15 +167,17 @@ The overall encryption process consists of several steps:
    gcc -o fi fi.c
    ```
 4. Type what you want to encrypt in the file input.tape.
-   
-5. Configure the keys and the plugboard as you wish.
+   ```yaml
+   HELLOFIALKA
+   ```
+6. Configure the keys and the plugboard as you wish.
 
-6. Compile the program :
+7. Compile the program :
    ```bash
    gcc -o fi fi.c
    ```
 
-7. Compile the program :
+8. Compile the program :
    ```bash
    ./fi
    ```
