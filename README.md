@@ -221,11 +221,8 @@ Ces fichiers permettent de configurer la machine et de lancer des processus de c
 
 ### Pourquoi ces fichiers sont générés ?
 
-Le but de cette fonctionnalité est de garantir une expérience utilisateur fluide, même si certains fichiers de configuration sont manquants ou corrompus. Les fichiers par défaut permettent de s'assurer que les utilisateurs peuvent toujours tester et utiliser la machine Fialka sans avoir à configurer manuellement tous les paramètres.
-
----
-
-Cela vous assure que le programme est **autonome** dans sa capacité à fonctionner, en générant les fichiers nécessaires à son bon fonctionnement et en permettant à l'utilisateur de tester la machine sans être dépendant de la présence de fichiers de configuration externes.
+ - Le but de cette fonctionnalité est de garantir une expérience utilisateur fluide, même si certains fichiers de configuration sont manquants ou corrompus. Les fichiers        par défaut permettent de s'assurer que les utilisateurs peuvent toujours tester et utiliser la machine Fialka sans avoir à configurer manuellement tous les paramètres.
+ - Cela vous assure que le programme est **autonome** dans sa capacité à fonctionner, en générant les fichiers nécessaires à son bon fonctionnement et en permettant à          l'utilisateur de tester la machine sans être dépendant de la présence de fichiers de configuration externes.
 
 ---
 
