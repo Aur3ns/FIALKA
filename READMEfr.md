@@ -140,14 +140,15 @@ La machine Fialka repose sur un système complexe de **rotors**, chacun capable 
    cd FIALKA
    ```
 3. Tapez ce que vous souhaitez chiffrer dans le fichier *input.tape*
+   
 4. Configurez les clés et le plugboard a votre guise
 
-3. Compilez le programme :
+5. Compilez le programme :
    ```bash
    gcc -o fi fi.c
    ```
 
-4. Exécutez le programme :
+6. Exécutez le programme :
    ```bash
    ./fi
    ```
