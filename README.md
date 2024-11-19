@@ -239,16 +239,14 @@ Each line contains the following information for each rotor :
 
 These files allow users to configure the machine and perform encryption/decryption processes without external configuration files.
 
----
 
-### Why are these files generated?
+## Why are these files generated?
 
  - The purpose of this feature is to ensure a smooth user experience, even if some configuration files are missing or corrupted. The default files ensure that users can always test and use the Fialka machine without having to manually configure all the parameters.
  - This ensures that the program is **autonomous** in its ability to function, generating the files necessary for its proper operation and allowing the user to test the machine without being dependent on the presence of external configuration files.
 
----
 
-### Explanation of generated files:
+## Explanation of generated files:
 
 - **`input.tape`** : Input punch tape file used to test encryption and decryption.
 - **`output.tape`** : Results of encryption and decryption.
