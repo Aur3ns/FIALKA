@@ -149,6 +149,7 @@ Le code implémente la simulation de la machine Fialka en suivant les principes 
    ```bash
    python int.py
    ```
+🚨ATTENTION : le fichier fialka.c est l'implémentation de l'institut d'informatique et de math de l'université de technologie de Slovaquie. Cette implémentation ne fonctionne pas, mais l'article source est disponible dans les liens plus haut.
    
 ## Utilisation du Programme
 L'utilisateur peut naviguer à travers différents menus :
