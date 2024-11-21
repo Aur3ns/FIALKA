@@ -9,12 +9,12 @@ typedef uint64_t pint;
 
 FILE *logFile = NULL;
 
-#define ROT 10          // Nombre de rotors
-#define MOD 30          // Alphabet de 30 caractères (Fialka)
-#define MAX_TAPE 1024   // Longueur maximale de la bande perforée
-#define BITS_PER_CHAR 5 // Codage 5-bit pour les bandes perforées
+#define ROT 10          // Nombre de rotors | Number of rotors
+#define MOD 30          // Alphabet de 30 caractères (Fialka) | 30-character alphabet (Fialka)
+#define MAX_TAPE 1024   // Longueur maximale de la bande perforée | Maximum length of the perforated strip
+#define BITS_PER_CHAR 5 // Codage 5-bit pour les bandes perforées | 5-bit coding for perforated bands
 
-// Prototypes de fonctions
+// Prototypes de fonctions | Function prototype
 void saveResults(const char *filename, const byte *before, const byte *after, const byte *decrypted, size_t length);
 void saveTape(const char *filename, const byte *tape, size_t length, const char *metadata);
 size_t loadTape(const char *filename, byte *tape);
@@ -29,51 +29,51 @@ void validateRotorInversion();
 void generatePermutation(byte *perm, byte *invPerm, int size);
 
 
-// Tables globales
-byte REFLECTORS[3][MOD]; // Trois configurations possibles pour le réflecteur
+// Tables globales | Global Tables 
+byte REFLECTORS[3][MOD]; // Trois configurations possibles pour le réflecteur | Three possible reflector configurations
 byte ENTRY_DISC[MOD];
-byte ROTOR[ROT][2][MOD];  // Chaque rotor a deux faces (ajustables)
+byte ROTOR[ROT][2][MOD];  // Chaque rotor a deux faces (ajustables) | Each rotor has two (adjustable) faces
 byte ROTOR_INV[ROT][2][MOD];
-byte PLUGBOARD[MOD];      // Substitutions dynamiques via cartes perforées
+byte PLUGBOARD[MOD];      // Substitutions dynamiques via cartes perforées | Dynamic substitution via punched cards
 
-// État de la machine
+// État de la machine | State of the machine
 byte rotor_positions[ROT];
-byte rotor_cores[ROT];    // Sélection du noyau de chaque rotor (0 ou 1)
-byte rotor_order[ROT];    // Ordre dynamique des rotors
-pint blocking_pins[ROT];  // Broches de blocage pour chaque rotor
-byte rotor_fixed[ROT];    // Rotors marqués comme fixes
-int active_reflector = 0; // Indice du réflecteur actif
+byte rotor_cores[ROT];    // Sélection du noyau de chaque rotor (0 ou 1) | Core selection for each rotor (0 or 1)
+byte rotor_order[ROT];    // Ordre dynamique des rotors                  | Dynamic rotor order
+pint blocking_pins[ROT];  // Broches de blocage pour chaque rotor        | Locking pins for each rotor
+byte rotor_fixed[ROT];    // Rotors marqués comme fixes                  | Rotors marked as fixed
+int active_reflector = 0; // Indice du réflecteur actif                  |  Active reflector index
 
 void generateReflector(byte *reflector, int size) {
     if (!reflector || size <= 0) {
-        fprintf(stderr, "Erreur : Arguments invalides pour generateReflector.\n");
+        fprintf(stderr, "Error: Invalid arguments for generateReflector.\n"); //Erreur : Arguments invalides pour generateReflector
         exit(EXIT_FAILURE);
     }
 
-    // Tableau de suivi pour éviter les auto-mappages ou doublons
+    // Tableau de suivi pour éviter les auto-mappages ou doublons | Tracking table to avoid auto-mapping or duplicates
     int assigned[size];
     for (int i = 0; i < size; i++) {
-        assigned[i] = 0; // Marquer toutes les positions comme non assignées
-        reflector[i] = 255; // Valeur par défaut invalide pour byte
+        assigned[i] = 0; // Marquer toutes les positions comme non assignées | Mark all positions as unassigned
+        reflector[i] = 255; // Valeur par défaut invalide pour byte | Invalid default value for byte
     }
 
     for (int i = 0; i < size; i++) {
-        if (reflector[i] == 255) { // Si cette position n'est pas encore assignée
+        if (reflector[i] == 255) { // Si cette position n'est pas encore assignée |  If this position has not yet been assigned
             int pair;
             do {
-                pair = rand() % size; // Générer un index aléatoire
-            } while (pair == i || assigned[pair]); // Éviter auto-mappages et doublons
+                pair = rand() % size; // Générer un index aléatoire | Generate a random index
+            } while (pair == i || assigned[pair]); // Éviter auto-mappages et doublons | Avoid auto-mapping and duplication
 
             reflector[i] = pair;
             reflector[pair] = i;
-            assigned[i] = assigned[pair] = 1; // Marquer ces positions comme assignées
+            assigned[i] = assigned[pair] = 1; // Marquer ces positions comme assignées | Mark these positions as assigned
         }
     }
 
-    // Validation finale pour garantir la symétrie
+    // Validation finale pour garantir la symétrie | Final validation to guarantee symmetry
     for (int i = 0; i < size; i++) {
         if (reflector[i] < 0 || reflector[i] >= size || reflector[reflector[i]] != i) {
-            fprintf(stderr, "Erreur : Réflecteur non valide après génération pour %d -> %d.\n", i, reflector[i]);
+            fprintf(stderr, "Error: Invalid reflector after generation for %d -> %d.\n", i, reflector[i]); //Erreur : Réflecteur non valide après génération pour %d -> %d.\n
             exit(EXIT_FAILURE);
         }
     }
@@ -82,7 +82,7 @@ void generateReflector(byte *reflector, int size) {
 
 void generatePermutation(byte *perm, byte *invPerm, int size) {
     if (!perm || !invPerm || size <= 0) {
-        fprintf(stderr, "Erreur : Arguments invalides pour generatePermutation.\n");
+        fprintf(stderr, "Error: Invalid arguments for generatePermutation.\n"); //Erreur : Arguments invalides pour generatePermutation.\n
         exit(EXIT_FAILURE);
     }
 
@@ -90,7 +90,7 @@ void generatePermutation(byte *perm, byte *invPerm, int size) {
         perm[i] = i; // Initialisation
     }
 
-    // Fisher-Yates Shuffle pour mélanger les éléments
+    // Algorithme de Fisher-Yates Shuffle pour mélanger les éléments | Fisher-Yates Shuffle algorithm for mixing elements
     for (int i = size - 1; i > 0; i--) {
         int j = rand() % (i + 1);
         byte temp = perm[i];
