@@ -566,3 +566,4 @@ int main() {
     printf("Encryption and decryption completed. Check 'output.tape' for results.\n");
 
     return 0;
+}
