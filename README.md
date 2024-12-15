@@ -1,6 +1,5 @@
-<div style="text-align: center;">
-    <h1 style="font-size: 3em; font-weight: bold;">Fialka M-125 | ФИАЛКА M-125</h1>
-</div>
+<h1 align="center"> Project Fialka M-125 | ФИАЛКА M-125 </h1>
+
 
 ![Machine Fialka](https://www.cryptomuseum.com/crypto/fialka/m125/img/302790/003/full.jpg)
 
