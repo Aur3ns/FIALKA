@@ -154,7 +154,7 @@ The overall encryption process consists of several steps:
 
 1. Clone the project :
    ```bash
-   git clone https://github.com/BlackBird63030/FIALKA.git 
+   git clone https://github.com/Aur3ns/FIALKA.git 
    ```
 2. Open the repository :
    ```bash
