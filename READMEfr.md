@@ -133,7 +133,7 @@ La machine Fialka repose sur un système complexe de **rotors**, chacun capable 
 
 1. Clonez le projet :
    ```bash
-   git clone https://github.com/BlackBird63030/FIALKA.git 
+   git clone https://github.com/Aur3ns/FIALKA.git 
    ```
 2. Ouvrez le repo :
    ```bash
